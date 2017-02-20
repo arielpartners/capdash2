@@ -62,48 +62,48 @@ These instructions work on a Mac.  They will be updated to cover a Windows 10 PC
 
 ### Common
 
-1. Install Xcode
-..* Open App Store.
-..* Search for Xcode.
-..* Double-click to install.
+1. **Install Xcode**
+  * Open App Store.
+  * Search for Xcode.
+  * Double-click to install.
  
-2. Install XCode Command Line Tools
-..* Open Terminal window.
-..* Type `xcode-select --install`
-..* Follow the prompts to install the command line developer tools
+2. **Install XCode Command Line Tools**
+  * Open Terminal window.
+  * Type `xcode-select --install`
+  * Follow the prompts to install the command line developer tools
 
-3. Install Homebrew
-..* Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-..* Ensure Homebrew is installed and working properly `brew doctor`
+3. **Install Homebrew**
+  * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  * Ensure Homebrew is installed and working properly `brew doctor`
 
-4. Install git
-..* `brew update`
-..* `brew install git`
+4. **Install git**
+  * `brew update`
+  * `brew install git`
 
 ### Frontend
 
-1. Install Node Version Manager (nvm)
-..* Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are 
+1. **Install Node Version Manager (nvm)**
+  * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are 
 maintaining multiple applications or multiple versions of the same application.
-..* See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
-..* Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
-..* Verify that nvm is installed correctly `nvm ls`
-..* You should not see any errors
-..* Check the version `nvm --version` it should be 0.33.0
+  * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
+  * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
+  * Verify that nvm is installed correctly `nvm ls`
+  * You should not see any errors
+  * Check the version `nvm --version` it should be 0.33.0
 
-4. Install Node.JS
-..* See latest version [here](https://nodejs.org/en/)
-..* Install version 7.5.0 `nvm install 7.5.0`
-..* Set 7.5.0 to be the default version `nvm alias default 7.5.0`
-..* Make sure everything is set correctly: `nvm ls`
+4. **Install Node.JS**
+  * See latest version [here](https://nodejs.org/en/)
+  * Install version 7.5.0 `nvm install 7.5.0`
+  * Set 7.5.0 to be the default version `nvm alias default 7.5.0`
+  * Make sure everything is set correctly: `nvm ls`
 
-5. Install global npm packages (angular-cli, npm-check-updates, typescript)
-..* Make sure you have the latest 4.2.0 version of npm `sudo npm install -g npm`
-..* Check the version `sudo npm ls -g npm` it should be 4.2.0
-..* Install typescript globally `sudo npm install -g typescript`
-..* Check the version `sudo npm ls -g typescript` it should be 2.1.6
-..* Install angular Command Line Interface globally `sudo npm install -g @angular/cli`
-..* check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-beta32.3
+5. **Install global npm packages (angular-cli, npm-check-updates, typescript)**
+  * Make sure you have the latest 4.2.0 version of npm `sudo npm install -g npm`
+  * Check the version `sudo npm ls -g npm` it should be 4.2.0
+  * Install typescript globally `sudo npm install -g typescript`
+  * Check the version `sudo npm ls -g typescript` it should be 2.1.6
+  * Install angular Command Line Interface globally `sudo npm install -g @angular/cli`
+  * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-beta32.3
 
 ### Backend
 
