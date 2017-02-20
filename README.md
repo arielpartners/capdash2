@@ -71,6 +71,8 @@ These instructions work on a Mac.  They will be updated to cover a Windows 10 PC
   * Open Terminal window.
   * Type `xcode-select --install`
   * Follow the prompts to install the command line developer tools
+  * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
+  * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
 
 3. **Install Homebrew**
   * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
