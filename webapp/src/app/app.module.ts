@@ -13,13 +13,15 @@ import { OfflineUnitsModule } from './offline-units/offline-units.module';
 import { HomeComponent } from './home.component';
 import { appRouting } from "./app.routing";
 import { PageNotFoundComponent } from './page-not-found.component';
+import { SidebarComponent } from './sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SidebarComponent
   ],
   imports: [
     NgbModule.forRoot(),
