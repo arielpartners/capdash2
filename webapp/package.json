@@ -21,6 +21,8 @@
     "@angular/platform-browser": "2.4.8",
     "@angular/platform-browser-dynamic": "2.4.8",
     "@angular/router": "3.4.8",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.20",
+    "bootstrap": "3.3.7",
     "core-js": "2.4.1",
     "rxjs": "5.1.1",
     "zone.js": "0.7.7"
@@ -33,7 +35,7 @@
     "codelyzer": "2.0.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
-    "karma": "1.4.1",
+    "karma": "1.5.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",
     "karma-jasmine": "1.1.0",
