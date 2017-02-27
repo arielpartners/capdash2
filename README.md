@@ -139,6 +139,30 @@ maintaining multiple applications or multiple versions of the same application.
   * In Webstorm load webapp
   * `npm install`
   * `ng serve`
+
+### Database
+
+1. **Install Docker**
+  * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+
+2. **Create Postgres Docker Image**
+  * Run Kitematic and click on `+NEW` next to Containers in the top left.
+  * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
+  * The top hit will be the "official" Postgres image.  Click `Create`
+  
+3. **Start Postgres Docker Image**
+  * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
+  
+4. **Test Postgres using PSQL from the command line**
+  * Execute `docker run -it --rm --link postgres:postgres postgres psql -h postgres -U postgres`
+  * At the prompt type `SELECT 1;`
+  * You should see 1 returned
+  * Ctrl-D to exit
+  
+5. **Configuration values for Rails**
+  * User: postgres
+  * Password: password
+  * Database: postgres
   
 ### Backend
 
@@ -167,35 +191,20 @@ maintaining multiple applications or multiple versions of the same application.
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that RubyMine still works if you move to 2FA
 
+4. **Install Postgres**
+  * So far, the only way I have gotten this to work is to install Postgres locally
+  * We won't actually use this instance, since we are using the Postgres Docker image, but we need the header files in order to compile the pg gem
+  * This part of the configuration could be improved
+  * We will use [these instructions](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
+  * `brew update`
+  * `brew doctor`
+  * `brew install postgresql`
+  
 4. **Install Postgres Ruby Gem**
   * `gem install pg`
-  * (needs work, doesn't currently work against Docker image)
 
 4. **Load the server project, build and run**
   * In RubyMine load server
-  * `gem install`
+  * `bundle install`
   * `rails start`
   
-### Database
-
-1. **Install Docker**
-  * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-
-2. **Create Postgres Docker Image**
-  * Run Kitematic and click on `+NEW` next to Containers in the top left.
-  * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
-  * The top hit will be the "official" Postgres image.  Click `Create`
-  
-3. **Start Postgres Docker Image**
-  * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
-  
-4. **Test Postgres using PSQL from the command line**
-  * Execute `docker run -it --rm --link postgres:postgres postgres psql -h postgres -U postgres`
-  * At the prompt type `SELECT 1;`
-  * You should see 1 returned
-  * Ctrl-D to exit
-  
-5. **Configuration values for Rails**
-  * User: postgres
-  * Password: password
-  * Database: postgres
