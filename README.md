@@ -204,7 +204,9 @@ maintaining multiple applications or multiple versions of the same application.
   * `gem install pg`
 
 4. **Load the server project, build and run**
-  * In RubyMine load server
+  * In RubyMine load cdserver project
+  * We are using [these instructions](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres)
   * `bundle install`
+  * `rake db:setup`
   * `rails start`
   
