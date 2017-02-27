@@ -130,24 +130,60 @@ maintaining multiple applications or multiple versions of the same application.
   * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-rc.0
 
 6. **Install JetBrains WebStorm**
-  * [Download Jetbrains](https://www.jetbrains.com/webstorm/download/)
+  * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
+  * You should have version 2016.3.3
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that WebStorm still works if you move to 2FA
+
+7. **Load the webapp project, build and run**
+  * In Webstorm load webapp
+  * `npm install`
+  * `ng serve`
   
 ### Backend
 
 1. **Install Ruby Version Manager (rvm)**
   * Execute `\curl https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s stable
 `
+  * Check out your .bash_profile file.  It should have rvm in it.  You should create a new shell to pick up the new settings.
+  * Test `which rvm`
+  * You should see something like this: `/Users/ckstrong/.rvm/bin/rvm`
 
+1. **Install Ruby**
+  * See latest version [here](https://www.ruby-lang.org/en/downloads/releases/)
+  * Install version 2.4.0 `rvm install 2.4.0`
+  * Generate docs `rvm docs generate-ri`
+  * Set 2.4.0 to be the default version `rvm use 2.4.0`
+  * Make sure everything is set correctly: `rvm ls`
+  * Check which Ruby you are using `ruby -v` You should see 2.4.0
+  
+2. **Install Rails**
+  * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
+  * Validate the install `gem list --local rails`
+  
+3. **Install JetBrains RubyMine**
+  * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
+  * You should have version 2016.3.2
+  * Go to Preferences/Version Control/GitHub and generate token, then test it
+  * This will make sure that RubyMine still works if you move to 2FA
+
+4. **Install Postgres Ruby Gem**
+  * `gem install pg`
+  * (needs work, doesn't currently work against Docker image)
+
+4. **Load the server project, build and run**
+  * In RubyMine load server
+  * `gem install`
+  * `rails start`
+  
 ### Database
 
 1. **Install Docker**
   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 2. **Create Postgres Docker Image**
-  * Run `Kitematic` and click on `+NEW` next to Containers in the top left.
-  * Type `Postgres` in the Searchbox where it says "Search for Docker images from Docker Hub"
+  * Run Kitematic and click on `+NEW` next to Containers in the top left.
+  * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
   * The top hit will be the "official" Postgres image.  Click `Create`
   
 3. **Start Postgres Docker Image**
