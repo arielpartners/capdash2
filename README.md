@@ -134,27 +134,34 @@ maintaining multiple applications or multiple versions of the same application.
   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 2. **Create Postgres Docker Image**
+  * Execute `docker pull postgres` 
+  * The alternative below could be made to work via some tweaking:
   * Run Kitematic and click on `+NEW` next to Containers in the top left.
   * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
   * The top hit will be the "official" Postgres image.  Click `Create`
   
-3. **Create Postgres Docker Container**
+3. **Create new or start up existing Postgres Docker Container**
   * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
-  
-4. **Start Postgres Docker Container**
+  * If you already did this and are restarting your computer, you will just start it
   * Execute `docker start postgres`
-  
-5. **Test Postgres using PSQL from the command line**
+
+4. **Test Postgres using PSQL from the command line**
   * Execute `docker run -it --rm --link postgres:postgres postgres psql -h postgres -U postgres`
   * At the prompt type `SELECT 1;`
   * You should see 1 returned
   * Ctrl-D to exit
   
-6. **Setup the capdash user**
+5. **Setup the capdash user**
   * `createuser --createdb --login -P capdash`
   * Since this is local, you can use an insecure password: `capdash`
-  * If the createuser executable does not exist, create the user in PSQL (see above)
+  * If the `createuser` executable does not exist, create the user in PSQL (use the docker command from #4)
   * Create the user: `CREATE USER capdash CREATEDB PASSWORD 'capdash';`
+  
+6. **Make sure postgres container is using the default port**
+  * Run Kitematic
+  * click the sprocket next to the postgres container
+  * You should see 5432 for the Docker port and localhost:5432 for the host port.
+  * If you don't, then add the host port and press save.
   
 ### Backend
 
@@ -192,10 +199,14 @@ maintaining multiple applications or multiple versions of the same application.
   * `brew doctor`
   * `brew install postgresql`
   
-4. **Install Postgres Ruby Gem**
+5. **Install Postgres Ruby Gem**
   * `gem install pg`
+  
+6. **Uninstall Postgres**
+  * There has got to be a better way: `brew uninstall postgresql`
+  * We just installed postgres to get pg and then uninstalled it immediately
 
-4. **Load the server project, build and run**
+7. **Load the server project, build and run**
   * In RubyMine load cdserver project
   * We are using [these instructions](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres)
   * `bundle install`
