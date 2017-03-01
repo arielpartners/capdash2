@@ -154,8 +154,7 @@ maintaining multiple applications or multiple versions of the same application.
   * `createuser --createdb --login -P capdash`
   * Since this is local, you can use an insecure password: `capdash`
   * If the createuser executable does not exist, create the user in PSQL (see above)
-  * Create the user: `CREATE USER capdash PASSWORD 'capdash';`
-  * Give user CreateDB permission: `ALTER USER capdash CREATEDB;`
+  * Create the user: `CREATE USER capdash CREATEDB PASSWORD 'capdash';`
   
 ### Backend
 
