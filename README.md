@@ -9,43 +9,31 @@ an an example for the since it is a relatively straightforward application.
 The number of New York City homeless and those seeking temporary shelter has grown substantially over the past few years, creating significant 
 challenges with respect to the task of ensuring that every person in need is assigned to an appropriate shelter on a nightly basis.  
 DHS constantly experiences extremely tight shelter capacity, and often requires emergency expansions of capacity.  The capacity constraints, 
-the fact that actual demand is often not clear until midnight, along with the need to match clients to shelters that can address any special needs, 
-makes it extremely important that DHS has an accurate and up to date understanding of shelter capacity and that DHS optimizes the availability 
-and use of existing units/beds.  
+the fact that actual demand is often not clear until midnight, along with the need to match clients to shelters that can address any special needs or 
+reasonable accommodation requests, makes it extremely important that DHS has an accurate and up to date understanding of shelter capacity and that 
+DHS optimizes the availability and use of existing units/beds.  
 
-Shelter Capacity Dashboard v2 (CapDash2) is a new software application that will give DHS the tools needed to create and manage plans that 
-optimize shelter utilization and minimize costs while fulfilling the DHS mission of providing appropriate shelter to every person in need.  
-CapDash2 will leverage key statistical information such as known seasonal periods of high or low demand to improve the quality of forecasting.  
-By incorporating regularly-updated data feeds from CARES and other key data sources both within and outside DHS, CapDash2 will also enable DHS 
-to modify both future forecasts and current plans as they work with shelters throughout each evening. CapDash2 will enable DHS to test out 
-alternative future scenarios and compare the costs of future plans given differing sets of assumptions, which may be used to help forecast 
-DHS budgetary needs.  Since offline units reduce capacity and impact both short-term and long-term capacity planning, CapDash2 will track 
-offline units and the plans and timelines for bringing them back online. Lastly, CapDash2 will track commercial hotel reservations made by 
-DHS Procurement Card (P-Card) holders and match them against their actual usage over time, while facilitating reconciliation with applicable 
-P-Card charges. The ability to accurately capture commercial hotel reservations and usage (many of which are made at the last minute) improves 
-CPD’s ability to report, manage, and budget for this activity. P-Card reconciliation capabilities reduce DHS’s risks associated with reporting 
-errors, mistaken/unused purchases, or malfeasance.
+Shelter Capacity Dashboard v2 (CapDash2) is a new software application that will give DHS the tools needed to create and manage plans that optimize 
+shelter utilization and minimize costs while fulfilling the DHS mission of providing appropriate shelter to every person in need.  CapDash2 will 
+leverage key statistical information such as known seasonal periods of high or low demand to improve the quality of forecasting.  By incorporating 
+regularly-updated data feeds from CARES and other key data sources both within and outside DHS, CapDash2 will also enable DHS to modify both future 
+forecasts and current plans as they work with shelters throughout each evening. CapDash2 will enable DHS to test out alternative future scenarios and 
+compare the costs of future plans given differing sets of assumptions, which may be used to help forecast DHS budgetary needs.  Since offline units 
+reduce capacity and impact both short-term and long-term capacity planning, CapDash2 will track offline units and the plans and timelines for bringing 
+them back online. Lastly, CapDash2 will track commercial hotel reservations made by DHS Procurement Card (P-Card) holders and match them against their 
+actual usage over time, while facilitating reconciliation with applicable P-Card charges. The ability to accurately capture commercial hotel reservations 
+and usage (many of which are made at the last minute) improves CPD’s ability to report, manage, and budget for this activity. P-Card reconciliation 
+capabilities reduce DHS’s risks associated with reporting errors, mistaken/unused purchases, or malfeasance.
 
-Phase one of CapDash2 will have both a business and a technical goal: it will significantly improve our ability to forecast capacity and demand 
-by leveraging statistics from prior years and applying seasonal patterns of high and low shelter utilization.  It will also serve as a reference 
+Phase one of CapDash2 will have both a business and a technical goal: it will significantly improve our ability to forecast capacity and demand by 
+leveraging statistics from prior years and applying seasonal patterns of high and low shelter utilization.  It will also serve as a reference 
 implementation of the DHS Enterprise Architecture, meeting security, scalability and maintainability requirements, and serve as an example for 
-subsequent applications. Phase two of CapDash2 will incorporate additional CapDash1 features including P-Card transaction tracking, offline unit 
-tracking, and commercial hotels reservation information, while adding a service that both reads data from and makes updates to CARES, the system 
-of record for much (though not all) of the information. Phase two will consolidate current systems such as CapDash1 and the Commercial Hotels 
-Tracker spreadsheet, while providing a single system that both Intake and Vacancy Control (IVC, adults), and Homeless Emergency Referral Operation 
-(HERO, families with children) can use to manage information not contained within CARES.  Easy modification, undo, auditing, and reconciliation of 
-up-to-the-minute information will also improve our ability to predict intra-day capacity changes, and improve accuracy of forecasts.
-
-The new system will provide significant qualitative improvements.  Overcoming neighborhood resistance to opening new shelters is difficult, and the 
-ability to provide side by side financial projections that demonstrate the impact of right sizing capacity will greatly strengthen the case.  
-Phase two will provide even more substantial benefits: although data feeds from CARES exist today, having a service to which applications can subscribe 
-to receive CARES updates in near real-time, and which also enables applications to update CARES while preserving data integrity will confer significant 
-benefits that extend well beyond CapDash2.  Although initially limited in scope to just what CapDash2 needs, the CARES micro-service will provide 
-opportunities for organizational learning and will pave the way for DHS to develop additional CARES micro-services in the future, ultimately making 
-CARES a first-class citizen in the Enterprise Architecture.  Making CARES data available as a set of services will speed development, and reduce the 
-risk associated with possible future CARES-related efforts such as upgrades or even partial replacement.  Perhaps most importantly, DHS faces risks 
-if we do not create a CARES service: The proliferation of new applications with the ability to update data sourced from CARES increases double-entry 
-of data, increases the burden of manual reconciliation, and increases the risk of potential reconciliation failures leading to dirty data.
+subsequent applications. Phase two of CapDash2 will incorporate additional CapDash1 features including P-Card transaction tracking, offline 
+unit tracking, and commercial hotels reservation information, while adding a service that both reads data from and makes updates to CARES, 
+the system of record for much (though not all) of the information. Phase two will consolidate current systems such as CapDash1 and the Commercial 
+Hotels Tracker spreadsheet, while providing a single system that both Intake and Vacancy Control (IVC, adults), and Homeless Emergency Referral 
+Operation (HERO, families with children) can use to manage information not contained within CARES.  Easy modification, undo, auditing, and 
+reconciliation of up-to-the-minute information will also improve our ability to predict intra-day capacity changes, and improve accuracy of forecasts.
 
 Please see the [Vision](./docs/CapDashVision.docx) for more details, as well as a domain glossary.
 
@@ -150,19 +138,24 @@ maintaining multiple applications or multiple versions of the same application.
   * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
   * The top hit will be the "official" Postgres image.  Click `Create`
   
-3. **Start Postgres Docker Image**
+3. **Create Postgres Docker Container**
   * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
   
-4. **Test Postgres using PSQL from the command line**
+4. **Start Postgres Docker Container**
+  * Execute `docker start postgres`
+  
+5. **Test Postgres using PSQL from the command line**
   * Execute `docker run -it --rm --link postgres:postgres postgres psql -h postgres -U postgres`
   * At the prompt type `SELECT 1;`
   * You should see 1 returned
   * Ctrl-D to exit
   
-5. **Configuration values for Rails**
-  * User: postgres
-  * Password: password
-  * Database: postgres
+6. **Setup the capdash user**
+  * `createuser --createdb --login -P capdash`
+  * Since this is local, you can use an insecure password: `capdash`
+  * If the createuser executable does not exist, create the user in PSQL (see above)
+  * Create the user: `CREATE USER capdash PASSWORD 'capdash';`
+  * Give user CreateDB permission: `ALTER USER capdash CREATEDB;`
   
 ### Backend
 
@@ -207,6 +200,7 @@ maintaining multiple applications or multiple versions of the same application.
   * In RubyMine load cdserver project
   * We are using [these instructions](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres)
   * `bundle install`
-  * `rake db:setup`
-  * `rails start`
+  * `rails db:setup`
+  * `rails db:migrate`
+  * `rails server`
   
