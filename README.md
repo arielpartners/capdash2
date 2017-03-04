@@ -61,6 +61,17 @@ Environment | URL | test login | test password
 Beta | http://localhost:8080 | testuser | testpassword |
 Prod | http://localhost:8080 | testuser | testpassword |
 
+## Metadata for the Application
+
+1. **Count lines of code**
+  * `chmod a+x utils/count-sloc;utils/count-sloc`
+  
+2. **webapp version number**
+  * See version in `webapp/package.json`
+   
+3. **Back-end version number**
+  * TBD FIXME
+
 ## Prerequisites
 
 The following steps are required in order to build and run the application as a developer.
