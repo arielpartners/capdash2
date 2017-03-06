@@ -52,14 +52,26 @@ Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStac
 
 ## Building the Application
 
-Please see the [front-end README](./webapp/README.md) and [back-end README](./be/README.me) respectively.
+Please see the [front-end README](./webapp/README.md) and [back-end README](./cdserver/README.me) respectively.
 
 ## Running the Application
 
 Environment | URL | test login | test password
 --- | ---- | --- | --- |
+Localhost | http://localhost:4200 | n/a | n/a |
 Beta | http://localhost:8080 | testuser | testpassword |
 Prod | http://localhost:8080 | testuser | testpassword |
+
+## Metadata for the Application
+
+1. **Count lines of code**
+  * `chmod a+x utils/count-sloc;utils/count-sloc`
+  
+2. **webapp version number**
+  * See version in `webapp/package.json`
+   
+3. **Back-end version number**
+  * TBD FIXME
 
 ## Prerequisites
 
