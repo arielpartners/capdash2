@@ -4,7 +4,7 @@
 # https://thisdata.com/blog/making-a-rails-health-check-that-doesnt-hit-the-database/
 #
 class MiddlewareHealthcheck
-  OK_RESPONSE = [ 204 ]
+  OK_RESPONSE = [ 204, {}, [] ]
 
   def initialize(app)
     @app = app

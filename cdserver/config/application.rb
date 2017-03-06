@@ -27,6 +27,6 @@ module Cdserver
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.middleware.insert_after "Rails::Rack::Logger", "MiddlewareHealthcheck"
+    config.middleware.insert_after 'Rails::Rack::Logger', 'MiddlewareHealthcheck'
   end
 end
