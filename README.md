@@ -76,7 +76,7 @@ Prod | http://localhost:8080 | testuser | testpassword |
 ## Prerequisites
 
 The following steps are required in order to build and run the application as a developer.
-These instructions work on a Mac.  They will be updated to cover a Windows 10 PC.
+These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequisites) for Windows.
 
 ### Common
 
@@ -184,7 +184,7 @@ maintaining multiple applications or multiple versions of the same application.
   * Test `which rvm`
   * You should see something like this: `/Users/ckstrong/.rvm/bin/rvm`
 
-1. **Install Ruby**
+2. **Install Ruby**
   * See latest version [here](https://www.ruby-lang.org/en/downloads/releases/)
   * Install version 2.4.0 `rvm install 2.4.0`
   * Generate docs `rvm docs generate-ri`
@@ -192,17 +192,17 @@ maintaining multiple applications or multiple versions of the same application.
   * Make sure everything is set correctly: `rvm ls`
   * Check which Ruby you are using `ruby -v` You should see 2.4.0
   
-2. **Install Rails**
+3. **Install Rails**
   * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
   * Validate the install `gem list --local rails`
   
-3. **Install JetBrains RubyMine**
+4. **Install JetBrains RubyMine**
   * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
   * You should have version 2016.3.2
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that RubyMine still works if you move to 2FA
 
-4. **Install Postgres**
+5. **Install Postgres**
   * So far, the only way I have gotten this to work is to install Postgres locally
   * We won't actually use this instance, since we are using the Postgres Docker image, but we need the header files in order to compile the pg gem
   * This part of the configuration could be improved
@@ -211,18 +211,121 @@ maintaining multiple applications or multiple versions of the same application.
   * `brew doctor`
   * `brew install postgresql`
   
-5. **Install Postgres Ruby Gem**
+6. **Install Postgres Ruby Gem**
   * `gem install pg`
   
-6. **Uninstall Postgres**
+7. **Uninstall Postgres**
   * There has got to be a better way: `brew uninstall postgresql`
   * We just installed postgres to get pg and then uninstalled it immediately
 
-7. **Load the server project, build and run**
+8. **Load the server project, build and run**
   * In RubyMine load cdserver project
   * We are using [these instructions](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres)
   * `bundle install`
   * `rails db:setup`
   * `rails db:migrate`
   * `rails server`
+
+## Windows Prerequisites
+
+### Common
+
+  1. **Install CMDer**
+    * CMDer is a Powershell replacement, download the full version with Git included
+    * Download [CMDer](http://cmder.net)
+  2. **Install Chocolatey**
+    * Chocolatey is a Homebrew-style package manager for windows
+    * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
+  3. **Clone this repo**
+    * `git clone git@github.com:arielpartners/capdash2.git`
+
+### Frontend
+
+  1. **Install Node Version Manager (nvm)**
+    * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
+    * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))
+
+  2. **Install Node.JS**
+    * See latest version [here](https://nodejs.org/en/)
+    * Install version 7.5.0 `nvm install 7.5.0`
+    * Set 7.5.0 to be the default version `nvm alias default 7.5.0`
+    * Make sure everything is set correctly: `nvm ls`
+
+  3. **Install global npm packages (angular-cli, npm-check-updates, typescript)**
+    * Make sure you have the latest version of npm `npm install -g npm`
+    * Check the version `npm ls -g npm` it should be 4.2.0
+    * Install typescript globally `npm install -g typescript`
+    * Check the version `npm ls -g typescript` it should be 2.1.6
+    * Install angular Command Line Interface globally `npm install -g @angular/cli`
+    * check the version `npm ls -g @angular/cli` it should be 1.0.0-rc.0
+
+  4. **Install JetBrains WebStorm**
+    * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
+    * You should have version 2016.3.3
+    * Go to Preferences/Version Control/GitHub and generate token, then test it
+    * This will make sure that WebStorm still works if you move to 2FA
+
+  5. **Load the webapp project, build and run**
+    * In Webstorm load webapp
+    * `npm install`
+    * `ng serve`
+
+### Database
+
+  1. **Install Docker for Windows**
+    * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
+
+  2. **Create Postgres Docker Image**
+    * Execute `docker pull postgres` 
+    
+  3. **Create new or start up existing Postgres Docker Container**
+    * Execute `docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
+    * If you already did this and are restarting your computer, you will just start it
+    * Execute `docker start postgres`
+
+  4. **Test Postgres using PSQL from the command line**
+    * Execute `docker run -it --rm --link postgres:postgres postgres psql -h postgres -U postgres`
+    * At the prompt type `SELECT 1;`
+    * You should see 1 returned
+    * Ctrl-D to exit
+    
+  5. **Setup the capdash user**
+    * `createuser --createdb --login -P capdash`
+    * Since this is local, you can use an insecure password: `capdash`
+    * If the `createuser` executable does not exist, create the user in PSQL (use the docker command from #4)
+    * Create the user: `CREATE USER capdash CREATEDB PASSWORD 'capdash';`
+
+### Backend
+
+  1. **Install Ruby**
+    * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
+    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/)
+    * Ruby 2.3 appears to be the most recent available on Windows
+    
+  2. **Install Rails**
+    * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
+    * Validate the install `gem list --local rails`
+    
+  3. **Install JetBrains RubyMine**
+    * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
+    * You should have version 2016.3.2
+    * Go to Preferences/Version Control/GitHub and generate token, then test it
+    * This will make sure that RubyMine still works if you move to 2FA
+
+  4. **Install Postgres**
+    * Not sure if necessary, but you can install Postgres:
+    * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
+    * From [the site](https://www.postgresql.org/download/windows/)
+    
+  5. **Install Postgres Ruby Gem**
+    * `gem install pg`
+
+  6. **Load the server project, build and run**
+    * In RubyMine load cdserver project
+    * `bundle install`
+    * `rails db:setup`
+    * `rails db:migrate`
+    * `rails server`
+      
+
   
