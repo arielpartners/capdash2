@@ -64,7 +64,7 @@ Prod | http://localhost:8080 | testuser | testpassword |
 ## Prerequisites
 
 The following steps are required in order to build and run the application as a developer.
-These instructions work on a Mac.  See [Windows Prerequisites](##Windows-Prerequisites) for Windows.
+These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequisites) for Windows.
 
 ### Common
 
