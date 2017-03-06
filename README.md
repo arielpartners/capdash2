@@ -52,12 +52,13 @@ Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStac
 
 ## Building the Application
 
-Please see the [front-end README](./webapp/README.md) and [back-end README](./be/README.me) respectively.
+Please see the [front-end README](./webapp/README.md) and [back-end README](./cdserver/README.me) respectively.
 
 ## Running the Application
 
 Environment | URL | test login | test password
 --- | ---- | --- | --- |
+Localhost | http://localhost:4200 | n/a | n/a |
 Beta | http://localhost:8080 | testuser | testpassword |
 Prod | http://localhost:8080 | testuser | testpassword |
 
