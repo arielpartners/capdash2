@@ -52,7 +52,7 @@ Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStac
 
 ## Building the Application
 
-Please see the [front-end README](./webapp/README.md) and [back-end README](./cdserver/README.me) respectively.
+Please see the [front-end README](./webapp/README.md) and [back-end README](./cdserver/README.md) respectively.
 
 ## Running the Application
 
