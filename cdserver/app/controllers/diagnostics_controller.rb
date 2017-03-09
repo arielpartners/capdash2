@@ -1,5 +1,5 @@
 class DiagnosticsController < ApplicationController
-
+  
   def info
     data = {
       name: Cdserver::Application::NAME,
