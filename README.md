@@ -68,10 +68,10 @@ Prod | http://localhost:8080 | testuser | testpassword |
   * `chmod a+x utils/count-sloc;utils/count-sloc`
 
 2. **webapp version number**
-  * See version in `webapp/package.json`
+  * See version in [`webapp/package.json`](./webapp/package.json)
 
 3. **Back-end version number**
-  * TBD FIXME
+  * See version in [`cdserver/config/initializers/application.rb`](./cdserver/config/initializers/application.rb)
 
 ## Prerequisites
 
