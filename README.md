@@ -1,38 +1,38 @@
 # Capacity Dashboard 2.0
 
-This application serves as an example for the proposed new Reference Architecture that will be used going forward 
-for NYC Dept of Homeless Services.  It is based on Shelter Capacity Dashboard (CapDash).  CapDash was selected 
+This application serves as an example for the proposed new Reference Architecture that will be used going forward
+for NYC Dept of Homeless Services.  It is based on Shelter Capacity Dashboard (CapDash).  CapDash was selected
 an an example for the since it is a relatively straightforward application.
 
 ## Project Vision
 
-The number of New York City homeless and those seeking temporary shelter has grown substantially over the past few years, creating significant 
+The number of New York City homeless and those seeking temporary shelter has grown substantially over the past few years, creating significant
 challenges with respect to the task of ensuring that every person in need is assigned to an appropriate shelter on a nightly basis.  
-DHS constantly experiences extremely tight shelter capacity, and often requires emergency expansions of capacity.  The capacity constraints, 
-the fact that actual demand is often not clear until midnight, along with the need to match clients to shelters that can address any special needs or 
-reasonable accommodation requests, makes it extremely important that DHS has an accurate and up to date understanding of shelter capacity and that 
+DHS constantly experiences extremely tight shelter capacity, and often requires emergency expansions of capacity.  The capacity constraints,
+the fact that actual demand is often not clear until midnight, along with the need to match clients to shelters that can address any special needs or
+reasonable accommodation requests, makes it extremely important that DHS has an accurate and up to date understanding of shelter capacity and that
 DHS optimizes the availability and use of existing units/beds.  
 
-Shelter Capacity Dashboard v2 (CapDash2) is a new software application that will give DHS the tools needed to create and manage plans that optimize 
-shelter utilization and minimize costs while fulfilling the DHS mission of providing appropriate shelter to every person in need.  CapDash2 will 
-leverage key statistical information such as known seasonal periods of high or low demand to improve the quality of forecasting.  By incorporating 
-regularly-updated data feeds from CARES and other key data sources both within and outside DHS, CapDash2 will also enable DHS to modify both future 
-forecasts and current plans as they work with shelters throughout each evening. CapDash2 will enable DHS to test out alternative future scenarios and 
-compare the costs of future plans given differing sets of assumptions, which may be used to help forecast DHS budgetary needs.  Since offline units 
-reduce capacity and impact both short-term and long-term capacity planning, CapDash2 will track offline units and the plans and timelines for bringing 
-them back online. Lastly, CapDash2 will track commercial hotel reservations made by DHS Procurement Card (P-Card) holders and match them against their 
-actual usage over time, while facilitating reconciliation with applicable P-Card charges. The ability to accurately capture commercial hotel reservations 
-and usage (many of which are made at the last minute) improves CPD’s ability to report, manage, and budget for this activity. P-Card reconciliation 
+Shelter Capacity Dashboard v2 (CapDash2) is a new software application that will give DHS the tools needed to create and manage plans that optimize
+shelter utilization and minimize costs while fulfilling the DHS mission of providing appropriate shelter to every person in need.  CapDash2 will
+leverage key statistical information such as known seasonal periods of high or low demand to improve the quality of forecasting.  By incorporating
+regularly-updated data feeds from CARES and other key data sources both within and outside DHS, CapDash2 will also enable DHS to modify both future
+forecasts and current plans as they work with shelters throughout each evening. CapDash2 will enable DHS to test out alternative future scenarios and
+compare the costs of future plans given differing sets of assumptions, which may be used to help forecast DHS budgetary needs.  Since offline units
+reduce capacity and impact both short-term and long-term capacity planning, CapDash2 will track offline units and the plans and timelines for bringing
+them back online. Lastly, CapDash2 will track commercial hotel reservations made by DHS Procurement Card (P-Card) holders and match them against their
+actual usage over time, while facilitating reconciliation with applicable P-Card charges. The ability to accurately capture commercial hotel reservations
+and usage (many of which are made at the last minute) improves CPD’s ability to report, manage, and budget for this activity. P-Card reconciliation
 capabilities reduce DHS’s risks associated with reporting errors, mistaken/unused purchases, or malfeasance.
 
-Phase one of CapDash2 will have both a business and a technical goal: it will significantly improve our ability to forecast capacity and demand by 
-leveraging statistics from prior years and applying seasonal patterns of high and low shelter utilization.  It will also serve as a reference 
-implementation of the DHS Enterprise Architecture, meeting security, scalability and maintainability requirements, and serve as an example for 
-subsequent applications. Phase two of CapDash2 will incorporate additional CapDash1 features including P-Card transaction tracking, offline 
-unit tracking, and commercial hotels reservation information, while adding a service that both reads data from and makes updates to CARES, 
-the system of record for much (though not all) of the information. Phase two will consolidate current systems such as CapDash1 and the Commercial 
-Hotels Tracker spreadsheet, while providing a single system that both Intake and Vacancy Control (IVC, adults), and Homeless Emergency Referral 
-Operation (HERO, families with children) can use to manage information not contained within CARES.  Easy modification, undo, auditing, and 
+Phase one of CapDash2 will have both a business and a technical goal: it will significantly improve our ability to forecast capacity and demand by
+leveraging statistics from prior years and applying seasonal patterns of high and low shelter utilization.  It will also serve as a reference
+implementation of the DHS Enterprise Architecture, meeting security, scalability and maintainability requirements, and serve as an example for
+subsequent applications. Phase two of CapDash2 will incorporate additional CapDash1 features including P-Card transaction tracking, offline
+unit tracking, and commercial hotels reservation information, while adding a service that both reads data from and makes updates to CARES,
+the system of record for much (though not all) of the information. Phase two will consolidate current systems such as CapDash1 and the Commercial
+Hotels Tracker spreadsheet, while providing a single system that both Intake and Vacancy Control (IVC, adults), and Homeless Emergency Referral
+Operation (HERO, families with children) can use to manage information not contained within CARES.  Easy modification, undo, auditing, and
 reconciliation of up-to-the-minute information will also improve our ability to predict intra-day capacity changes, and improve accuracy of forecasts.
 
 Please see the [Vision](./docs/CapDashVision.docx) for more details, as well as a domain glossary.
@@ -66,12 +66,12 @@ Prod | http://localhost:8080 | testuser | testpassword |
 
 1. **Count lines of code**
   * `chmod a+x utils/count-sloc;utils/count-sloc`
-  
+
 2. **webapp version number**
-  * See version in `webapp/package.json`
-   
+  * See version in [`webapp/package.json`](./webapp/package.json)
+
 3. **Back-end version number**
-  * TBD FIXME
+  * See version in [`cdserver/config/initializers/application.rb`](./cdserver/config/initializers/application.rb)
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequi
   * Open App Store.
   * Search for Xcode.
   * Double-click to install.
- 
+
 2. **Install XCode Command Line Tools**
   * Open Terminal window.
   * Type `xcode-select --install`
@@ -103,11 +103,11 @@ These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequi
 
 5. **Clone this repo**
   * `git clone git@github.com:arielpartners/capdash2.git`
-  
+
 ### Frontend
 
 1. **Install Node Version Manager (nvm)**
-  * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are 
+  * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are
 maintaining multiple applications or multiple versions of the same application.
   * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
   * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
@@ -146,12 +146,12 @@ maintaining multiple applications or multiple versions of the same application.
   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 2. **Create Postgres Docker Image**
-  * Execute `docker pull postgres` 
+  * Execute `docker pull postgres`
   * The alternative below could be made to work via some tweaking:
   * Run Kitematic and click on `+NEW` next to Containers in the top left.
   * Type `Postgres` in the Search box where it says "Search for Docker images from Docker Hub"
   * The top hit will be the "official" Postgres image.  Click `Create`
-  
+
 3. **Create new or start up existing Postgres Docker Container**
   * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
   * If you already did this and are restarting your computer, you will just start it
@@ -162,19 +162,19 @@ maintaining multiple applications or multiple versions of the same application.
   * At the prompt type `SELECT 1;`
   * You should see 1 returned
   * Ctrl-D to exit
-  
+
 5. **Setup the capdash user**
   * `createuser --createdb --login -P capdash`
   * Since this is local, you can use an insecure password: `capdash`
   * If the `createuser` executable does not exist, create the user in PSQL (use the docker command from #4)
   * Create the user: `CREATE USER capdash CREATEDB PASSWORD 'capdash';`
-  
+
 6. **Make sure postgres container is using the default port**
   * Run Kitematic
   * click the sprocket next to the postgres container
   * You should see 5432 for the Docker port and localhost:5432 for the host port.
   * If you don't, then add the host port and press save.
-  
+
 ### Backend
 
 1. **Install Ruby Version Manager (rvm)**
@@ -191,11 +191,11 @@ maintaining multiple applications or multiple versions of the same application.
   * Set 2.4.0 to be the default version `rvm use 2.4.0`
   * Make sure everything is set correctly: `rvm ls`
   * Check which Ruby you are using `ruby -v` You should see 2.4.0
-  
+
 3. **Install Rails**
   * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
   * Validate the install `gem list --local rails`
-  
+
 4. **Install JetBrains RubyMine**
   * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
   * You should have version 2016.3.2
@@ -210,10 +210,10 @@ maintaining multiple applications or multiple versions of the same application.
   * `brew update`
   * `brew doctor`
   * `brew install postgresql`
-  
+
 6. **Install Postgres Ruby Gem**
   * `gem install pg`
-  
+
 7. **Uninstall Postgres**
   * There has got to be a better way: `brew uninstall postgresql`
   * We just installed postgres to get pg and then uninstalled it immediately
@@ -276,8 +276,8 @@ maintaining multiple applications or multiple versions of the same application.
     * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
   2. **Create Postgres Docker Image**
-    * Execute `docker pull postgres` 
-    
+    * Execute `docker pull postgres`
+
   3. **Create new or start up existing Postgres Docker Container**
     * Execute `docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
     * If you already did this and are restarting your computer, you will just start it
@@ -288,7 +288,7 @@ maintaining multiple applications or multiple versions of the same application.
     * At the prompt type `SELECT 1;`
     * You should see 1 returned
     * Ctrl-D to exit
-    
+
   5. **Setup the capdash user**
     * `createuser --createdb --login -P capdash`
     * Since this is local, you can use an insecure password: `capdash`
@@ -301,11 +301,11 @@ maintaining multiple applications or multiple versions of the same application.
     * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
     * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/)
     * Ruby 2.3 appears to be the most recent available on Windows
-    
+
   2. **Install Rails**
     * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
     * Validate the install `gem list --local rails`
-    
+
   3. **Install JetBrains RubyMine**
     * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
     * You should have version 2016.3.2
@@ -316,7 +316,7 @@ maintaining multiple applications or multiple versions of the same application.
     * Not sure if necessary, but you can install Postgres:
     * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
     * From [the site](https://www.postgresql.org/download/windows/)
-    
+
   5. **Install Postgres Ruby Gem**
     * `gem install pg`
 
@@ -326,6 +326,3 @@ maintaining multiple applications or multiple versions of the same application.
     * `rails db:setup`
     * `rails db:migrate`
     * `rails server`
-      
-
-  
