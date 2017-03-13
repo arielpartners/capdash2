@@ -1,0 +1,10 @@
+AllCops:
+  Include:
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - '**/features/support/env.rb'
+    - 'script/*'
+    - 'spec/*'
+    - 'bin/*'
