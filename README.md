@@ -127,7 +127,7 @@ maintaining multiple applications or multiple versions of the same application.
   * Install typescript globally `sudo npm install -g typescript`
   * Check the version `sudo npm ls -g typescript` it should be 2.1.6
   * Install angular Command Line Interface globally `sudo npm install -g @angular/cli`
-  * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-rc.0
+  * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-rc.2
 
 6. **Install JetBrains WebStorm**
   * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
@@ -257,7 +257,7 @@ maintaining multiple applications or multiple versions of the same application.
     * Install typescript globally `npm install -g typescript`
     * Check the version `npm ls -g typescript` it should be 2.1.6
     * Install angular Command Line Interface globally `npm install -g @angular/cli`
-    * check the version `npm ls -g @angular/cli` it should be 1.0.0-rc.0
+    * check the version `npm ls -g @angular/cli` it should be 1.0.0-rc.2
 
   4. **Install JetBrains WebStorm**
     * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
