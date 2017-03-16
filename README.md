@@ -4,6 +4,23 @@ This application serves as an example for the proposed new Reference Architectur
 for NYC Dept of Homeless Services.  It is based on Shelter Capacity Dashboard (CapDash).  CapDash was selected
 an an example for the since it is a relatively straightforward application.
 
+## Table of Contents
+
+* [Project Vision](#project-vision)
+* [Architecture](#architecture)
+* [Building the Application](#building-the-application)
+* [Running the Application](#running-the-aplication)
+* [Prerequisites](#prerequisites)
+    * [Common](#common)
+    * [Frontend](#frontend)
+    * [Database](#database)
+    * [Backend](#backend)
+* [Windows Prerequisites](#windows-prerequisites)
+    * [Common](#windows-common)
+    * [Frontend](#windows-frontend)
+    * [Database](#windows-database)
+    * [Backend](#windows-backend)
+
 ## Project Vision
 
 The number of New York City homeless and those seeking temporary shelter has grown substantially over the past few years, creating significant
@@ -228,7 +245,7 @@ maintaining multiple applications or multiple versions of the same application.
 
 ## Windows Prerequisites
 
-### Common
+### <a name="windows-common"></a>Common
 
   1. **Install CMDer**
     * CMDer is a Powershell replacement, download the full version with Git included
@@ -239,7 +256,7 @@ maintaining multiple applications or multiple versions of the same application.
   3. **Clone this repo**
     * `git clone git@github.com:arielpartners/capdash2.git`
 
-### Frontend
+### <a name="windows-frontend"></a>Frontend
 
   1. **Install Node Version Manager (nvm)**
     * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
@@ -270,7 +287,7 @@ maintaining multiple applications or multiple versions of the same application.
     * `npm install`
     * `ng serve`
 
-### Database
+### <a name="windows-database"></a>Database
 
   1. **Install Docker for Windows**
     * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
@@ -295,7 +312,7 @@ maintaining multiple applications or multiple versions of the same application.
     * If the `createuser` executable does not exist, create the user in PSQL (use the docker command from #4)
     * Create the user: `CREATE USER capdash CREATEDB PASSWORD 'capdash';`
 
-### Backend
+### <a name="windows-backend"></a>Backend
 
   1. **Install Ruby**
     * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
