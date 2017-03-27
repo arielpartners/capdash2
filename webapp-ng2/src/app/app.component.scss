@@ -1,5 +1,6 @@
-body, .content {
+body {
   background-color: #a7a5ac;
+  height: 100vh;
 }
 
 .app {
@@ -15,6 +16,7 @@ body, .content {
 .app-nav {
   flex: 0 0 250px;
   order: -1;
+  height: calc(100vh - 52px);
 }
 
 .app-section {
