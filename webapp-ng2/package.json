@@ -5,11 +5,12 @@
   "author": "Craeg Strong",
   "angular-cli": {},
   "scripts": {
+    "e2e": "ng e2e",
+    "hmr": "ng serve --hmr -e=hmr --proxy-config config/proxy.conf.json",
+    "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -29,8 +30,9 @@
     "zone.js": "0.7.7"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.2",
+    "@angular/cli": "^1.0.0-rc.2",
     "@angular/compiler-cli": "2.4.9",
+    "@angularclass/hmr": "^1.2.2",
     "@types/jasmine": "2.5.45",
     "@types/node": "7.0.8",
     "codelyzer": "2.0.1",

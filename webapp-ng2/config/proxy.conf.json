@@ -1,0 +1,14 @@
+{
+  "/api/animals/lions": {
+    "target": "http://www.mocky.io/v2/588d70ad100000e50f2d2983",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/animals/elephants": {
+    "target": "http://www.mocky.io/v2/588d702d100000d50f2d2980",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
