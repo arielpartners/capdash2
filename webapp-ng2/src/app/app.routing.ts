@@ -3,8 +3,8 @@
  */
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },

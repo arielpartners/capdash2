@@ -1,13 +1,5 @@
 .sidebar {
-  width: 220px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  padding-top: 54px;
   background: #2d353c;
-  z-index: 1010;
-  -webkit-transform: translateZ(0);
 }
 .sidebar-bg {
   background: #2d353c;
@@ -44,7 +36,7 @@
 }
 .sidebar .nav > li.active > a .label.label-theme,
 .sidebar .nav > li.active > a .badge {
-  background: url(../assets/images/transparent/black-0.4.png);
+  background: url(../../assets/images/transparent/black-0.4.png);
   background: rgba(0,0,0,0.4);
 }
 .sidebar .nav > li.expand > a,
@@ -120,15 +112,15 @@
   position: relative;
 }
 .sidebar .sub-menu > li > a:before {
-  content: '\f10c';
-  font-family: FontAwesome;
+  content: '\25CB';
+  font-family: Arial;
   position: absolute;
   left: 0;
-  font-size: 7px;
+  font-size: 14px;
   color: #889097;
   top: 50%;
-  margin-top: -4px;
-  margin-left: -6px;
+  margin-top: -10px;
+  margin-left: -7px;
 }
 .sidebar .sub-menu > li > a:hover,
 .sidebar .sub-menu > li > a:focus,

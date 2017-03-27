@@ -1,5 +1,15 @@
-<cd-header></cd-header>
-<cd-sidebar></cd-sidebar>
-<div id="content" class="content container content-full-width height-full content-inverse-mode">
-  <router-outlet></router-outlet>
+<div class="app">
+  <div class="app-header">
+    <cd-header></cd-header>
+  </div>
+  <div class="app-section">
+    <div class="app-nav">
+      <cd-sidebar></cd-sidebar>
+    </div>
+    <div class="app-content">
+      <div id="content" class="content container content-full-width height-full content-inverse-mode">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
