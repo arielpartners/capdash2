@@ -10,10 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309181839) do
+ActiveRecord::Schema.define(version: 20170327194642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "street_address1"
+    t.string   "street_address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "floors", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "shelter_building_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["shelter_building_id"], name: "index_floors_on_shelter_building_id", using: :btree
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shelter_buildings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "address_id"
+    t.integer  "surge_beds"
+    t.integer  "shelter_id"
+    t.index ["address_id"], name: "index_shelter_buildings_on_address_id", using: :btree
+    t.index ["shelter_id"], name: "index_shelter_buildings_on_shelter_id", using: :btree
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "provider_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["provider_id"], name: "index_shelters_on_provider_id", using: :btree
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "beds"
+    t.integer  "shelter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "floor_id"
+    t.index ["floor_id"], name: "index_units_on_floor_id", using: :btree
+    t.index ["shelter_id"], name: "index_units_on_shelter_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
