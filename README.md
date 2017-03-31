@@ -290,6 +290,7 @@ maintaining multiple applications or multiple versions of the same application.
 ### <a name="windows-database"></a>Database
 
   1. **Install Docker for Windows**
+    * Confirm that the PC has virtualization enabled: Launch the Task Manager, select the Performance tab, and confirm that "Virtualization : **Enabled**".  If not, enable virtualization in the BIOS: On an HP EliteDesk 800 G1, for instance, hold down F10 during the boot process, and the PC will enter the HP Setup Utility.  Pick Security -> System Securty.  Then enable Virtualization Technology (VTx) and Virtualization Technology Directed I/O (VTd).  Accept/Save changes by pressing F10.  The computer will reboot.  Then confirm that virtualization is enabled via the Task Manager.
     * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
   2. **Create Postgres Docker Image**
