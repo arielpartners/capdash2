@@ -10,7 +10,7 @@ import { ForecastsModule } from './forecasts/forecasts.module';
 import { HotelsModule } from './hotels/hotels.module';
 import { OfflineUnitsModule } from './offline-units/offline-units.module';
 import { HomeComponent } from './home/home.component';
-import { appRouting } from './app.routing';
+import { AppRoutingModule } from './app.routing';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -30,7 +30,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ForecastsModule,
     OfflineUnitsModule,
     HotelsModule,
-    appRouting
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

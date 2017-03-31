@@ -1,6 +1,7 @@
 /**
  * Created by ckstrong on 2/20/17.
  */
+import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
@@ -14,4 +15,8 @@ const APP_ROUTES: Routes = [
   {path: '**', component: PageNotFoundComponent }
 ];
 
-export const appRouting = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+  imports: [RouterModule.forRoot(APP_ROUTES)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
