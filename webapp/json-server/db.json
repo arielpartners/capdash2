@@ -1,0 +1,9 @@
+{
+  "info": {
+    "name": "Capdash-Server",
+    "version": "9.9.9",
+    "description": "Capacity Dashboard",
+    "host": "to.be.determined.com",
+    "isDevServer": true
+  }
+}

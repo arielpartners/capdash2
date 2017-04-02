@@ -1,0 +1,7 @@
+{
+  "/api/": "/",
+  "/v1/": "/",
+  "/api/v1/": "/v1/",
+  "/api/v1/login.html": "/api/v1/login.html",
+  "/api/v1/logged-in.html": "/api/v1/loged-in.html"
+}
