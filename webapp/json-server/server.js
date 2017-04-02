@@ -6,7 +6,9 @@ const _ = require('lodash');
 
 const source = 'json-server/db.json';
 const jsonServer = require('json-server');
-const port = require('../package.json').config.apiPort;
+const config = require('../package.json').config;
+const port = config.apiPort;
+const host = config.defaultTarget;
 const routes = require('../routes.json');
 const data = require('./db.json');
 
@@ -19,7 +21,6 @@ const router = jsonServer.router(source);
 const middlewares = jsonServer.defaults(defaultsOpts);
 
 function prettyPrint(object, rules) {
-    const host = 'localhost';
     const root = `http://${host}:${port}`;
 
     console.log();
