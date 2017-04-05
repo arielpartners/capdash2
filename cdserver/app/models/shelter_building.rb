@@ -2,6 +2,8 @@
 class ShelterBuilding < Compartment
   has_many :floors
   has_many :units, through: :floors
+  has_many :floor_beds, through: :floors, source: :beds
+  has_many :unit_beds, through: :units, source: :beds
   has_many :censuses
   belongs_to :address
   belongs_to :shelter, required: true
@@ -9,24 +11,29 @@ class ShelterBuilding < Compartment
   validates :slug, uniqueness: true
 
   after_initialize :ensure_name
+  after_initialize :ensure_surge_bed_value
   before_save :create_slug
 
+  def beds
+    floor_beds + unit_beds
+  end
+
   def bed_count(include_surge = false)
-    beds = self.units.sum(:beds)
-    if include_surge && surge_beds
-      beds + surge_beds
-    else
-      beds
-    end
+    include_surge ? beds.count + surge_beds : beds.count
   end
 
   private
 
   def ensure_name
-    self.name ||= address.street_address1
+    return unless name.nil? && address
+    self.name = address.street_address1
+  end
+
+  def ensure_surge_bed_value
+    self.surge_beds ||= 0
   end
 
   def create_slug
-    self.slug = self.name.parameterize
+    self.slug = name.parameterize
   end
 end
