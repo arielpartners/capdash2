@@ -210,7 +210,7 @@ maintaining multiple applications or multiple versions of the same application.
   * Check which Ruby you are using `ruby -v` You should see 2.4.0
 
 3. **Install Rails**
-  * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
+  * Install version 5.0.2 `gem install rails --version=5.0.2 --no-ri --no-rdoc`
   * Validate the install `gem list --local rails`
 
 4. **Install JetBrains RubyMine**
@@ -321,7 +321,7 @@ maintaining multiple applications or multiple versions of the same application.
     * Ruby 2.3 appears to be the most recent available on Windows
 
   2. **Install Rails**
-    * Install version 5.0.1 `gem install rails --version=5.0.1 --no-ri --no-rdoc`
+    * Install version 5.0.2 `gem install rails --version=5.0.2 --no-ri --no-rdoc`
     * Validate the install `gem list --local rails`
 
   3. **Install JetBrains RubyMine**
