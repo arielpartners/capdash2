@@ -1,7 +1,8 @@
 class SheltersController < ApplicationController
   def index
     if params[:provider]
-      @shelters = Shelter.join(:provider).where(provider: { name: params[:provider] } )
+      slug = params[:provider].parameterize
+      @shelters = Shelter.joins(:provider).where(providers: { slug: slug })
     else
       @shelters = Shelter.all
     end
