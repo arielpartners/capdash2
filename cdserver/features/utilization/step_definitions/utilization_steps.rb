@@ -21,13 +21,11 @@ Given(/^The following shelters exist in the system$/) do |table|
       shelter: shelter
     )
     floor = building.floors.create!(name: '1')
-    Unit.transaction do
-      n = entry['Units'].to_i
-      if entry['Population Group'].include?('Family')
-        n.times { Unit.create!(name: n, compartment: floor) }
-      else
-        n.times { Bed.create!(name: n, compartment: floor) }
-      end
+    n = entry['Units'].to_i
+    if entry['Population Group'].include?('Family')
+      Unit.transaction { n.times { Unit.create!(name: n, compartment: floor) } }
+    else
+      Bed.transaction { n.times { Bed.create!(name: n, compartment: floor) } }
     end
   end
 end
@@ -38,7 +36,7 @@ Given(/^The following census information exists in the system$/) do |table|
     building = ShelterBuilding.find_by(name: entry['Building'])
     Census.create!(
       count: entry['Occupied'],
-      observed_for: DateTime.parse(entry['Business Date']),
+      shelter_date: ShelterDate.new(entry['Shelter Date'], 3),
       shelter_building: building
     )
   end
