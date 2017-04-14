@@ -6,5 +6,19 @@ Feature: Shelters Index
 @ignore
 Scenario: list all shelters
   Given Shelters in the system
-  When I navigate to /shelters
-  Then I should receive a list of all shelters
+    | Shelter                         | Provider                        |
+    | East Williamsburg Men's Shelter | Project Renewal                 |
+    | Tillary Women's Shelter         | Institute for Community Living  |
+    | Anthony Adult Family Residence  | Samaritan Village               |
+    | Life                            | NYC Dept of Homeless Services   |
+    | Prospect Interfaith             | Homes for the Homeless          |
+    | Bronx Acacia Cluster II         | Acacia Network Housing, Inc.    |
+  When I navigate to the url /shelters
+  Then I should see the following shelter information
+    | Shelter                         |
+    | East Williamsburg Men's Shelter |
+    | Tillary Women's Shelter         |
+    | Anthony Adult Family Residence  |
+    | Life                            |
+    | Prospect Interfaith             |
+    | Bronx Acacia Cluster II         |

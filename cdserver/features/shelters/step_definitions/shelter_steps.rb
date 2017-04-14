@@ -45,3 +45,22 @@ Then(/^I should see the following provider information$/) do |table|
     expect(providers).to include(entry['Provider'])
   end
 end
+
+Given(/^Shelters in the system$/) do |table|
+  entries = table.hashes
+  entries.each do |entry|
+    Shelter.create!(
+      name: entry['Shelter'],
+      provider: Provider.new(name: entry['Provider'])
+    )
+  end
+end
+
+Then(/^I should see the following shelter information$/) do |table|
+  entries = table.hashes
+  response_body = JSON.parse(last_response.body)
+  entries.each do |entry|
+    returned_shelter = response_body.find{|s| s['name'] == entry['Shelter'] }
+    expect(returned_shelter['name']).to eq(entry['Shelter'])
+  end
+end
