@@ -6,5 +6,19 @@ Feature: Providers Index
 @ignore
 Scenario: list all providers
   Given Providers in the system
-  When I navigate to /providers
-  Then I should see a list of all providers
+    | Provider                            |
+    | Project Renewal                     |
+    | Institute for Community Living      |
+    | Samaritan Village                   |
+    | NYC Department of Homeless Services |
+    | Homes for the Homeless              |
+    | Acacia Network Housing, Inc.        |
+  When I navigate to the url /providers
+  Then I should see the following provider information
+    | Provider                            |
+    | Project Renewal                     |
+    | Institute for Community Living      |
+    | Samaritan Village                   |
+    | NYC Department of Homeless Services |
+    | Homes for the Homeless              |
+    | Acacia Network Housing, Inc.        |

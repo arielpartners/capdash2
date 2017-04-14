@@ -30,3 +30,18 @@ Given(/^the following shelter building information:$/) do |table|
     )
   end
 end
+
+Given(/^Providers in the system$/) do |table|
+  entries = table.hashes
+  entries.each do |entry|
+    Provider.create!(name: entry['Provider'])
+  end
+end
+
+Then(/^I should see the following provider information$/) do |table|
+  providers = JSON.parse(last_response.body).map{ |p| p['name'] }
+  entries = table.hashes
+  entries.each do |entry|
+    expect(providers).to include(entry['Provider'])
+  end
+end
