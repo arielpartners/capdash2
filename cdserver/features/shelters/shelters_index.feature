@@ -5,3 +5,6 @@ Feature: Shelters Index
 
 @ignore
 Scenario: list all shelters
+  Given Shelters in the system
+  When I navigate to /shelters
+  Then I should receive a list of all shelters

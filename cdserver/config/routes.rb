@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   post 'utilization', to: 'censuses#utilization'
 
+  resources :providers, only: [:index, :show]
   resources :shelters, only: [:show, :index] do
     resources :buildings, controller: 'shelter_buildings', only: [:show]
   end

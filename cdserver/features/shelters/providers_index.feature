@@ -5,3 +5,6 @@ Feature: Providers Index
 
 @ignore
 Scenario: list all providers
+  Given Providers in the system
+  When I navigate to /providers
+  Then I should see a list of all providers
