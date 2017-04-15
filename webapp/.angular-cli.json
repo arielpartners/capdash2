@@ -19,8 +19,9 @@
       "tsconfig": "tsconfig.json",
       "prefix": "cd",
       "styles": [
-        "styles.scss",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "styles.less",
+        "../node_modules/bootstrap/less/bootstrap.less",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

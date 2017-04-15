@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ng build",
     "e2e": "ng e2e",
-    "hmr": "ng serve --hmr -e=hmr --proxy-config config/proxy.conf.json",
+    "hmr": "ng serve --open --hmr -e=hmr --proxy-config config/proxy.conf.json",
     "json-server": "nodemon --watch ./json-server/ ./json-server/server.js --delay 2",
     "lint": "ng lint",
     "ng": "ng",
@@ -32,6 +32,7 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.22",
     "bootstrap": "3.3.7",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-observable": "^0.13.0",
