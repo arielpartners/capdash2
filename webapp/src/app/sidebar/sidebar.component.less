@@ -12,6 +12,78 @@
   z-index: 1010;
   -webkit-transform: translateZ(0);
   overflow-y: scroll;
+
+  .nav {
+    > li.active > a .label.label-theme,
+    > li.active > a .badge {
+      background: url('@{base-url}/transparent/black-0.4.png');
+      background: rgba(0,0,0,0.4);
+    }
+    > li.expand > a,
+    > li > a:hover,
+    > li > a:focus {
+      background: @dark_black;
+      color: @sidebar_text_color;
+    }
+
+    > li.active > a,
+    > li.active > a:hover,
+    > li.active > a:focus {
+      color: #fff;
+      background: @green;
+    }
+    > li.active > a .label.label-success,
+    > li.active > a .badge.badge-success {
+      background: @dark_green;
+    }
+
+    > li {
+      > a i {
+        float: left;
+        margin-right: 15px;
+        width: 14px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 14px;
+      }
+      a i[class*="ion-"] {
+        margin-right: 11px;
+        width: 18px;
+        font-size: 18px;
+      }
+      > a .badge {
+        margin-top: 1px;
+        padding: 3px 8px;
+        background: @darker_black;
+        font-weight: 300;
+        font-size: 10px;
+      }
+      > a .caret {
+        float: right;
+        margin-top: 9px;
+      }
+
+      > a {
+        padding: 8px 20px;
+        line-height: 20px;
+        color: @sidebar_text_color;
+      }
+
+      &.sidebar-grid .nav {
+        > li > a {
+          border-bottom: 1px solid #383f46;
+          border-top: 1px solid #383f46;
+        }
+        > li.active > a {
+          border-color: #2d353c;
+          z-index: 10;
+        }
+        > li + li {
+          margin-top: -1px;
+        }
+      }
+    }
+  }
 }
 
 .sidebar-bg {
@@ -23,81 +95,6 @@
   width: 220px;
   z-index: 1000;
 }
-.sidebar .nav > li {
-
-  > a {
-    padding: 8px 20px;
-    line-height: 20px;
-    color: @sidebar_text_color;
-  }
-
-  &.sidebar-grid .nav {
-    > li > a {
-      border-bottom: 1px solid #383f46;
-      border-top: 1px solid #383f46;
-    }
-    > li.active > a {
-      border-color: #2d353c;
-      z-index: 10;
-    }
-    > li + li {
-      margin-top: -1px;
-    }
-  }
-}
-
-.sidebar .nav {
-  > li.active > a .label.label-theme,
-  > li.active > a .badge {
-    background: url('@{base-url}/transparent/black-0.4.png');
-    background: rgba(0,0,0,0.4);
-  }
-  > li.expand > a,
-  > li > a:hover,
-  > li > a:focus {
-    background: @dark_black;
-    color: @sidebar_text_color;
-  }
-
-  > li.active > a,
-  > li.active > a:hover,
-  > li.active > a:focus {
-    color: #fff;
-    background: @green;
-  }
-  > li.active > a .label.label-success,
-  > li.active > a .badge.badge-success {
-    background: @dark_green;
-  }
-
-  > li {
-    > a i {
-      float: left;
-      margin-right: 15px;
-      width: 14px;
-      text-align: center;
-      line-height: 20px;
-      font-size: 14px;
-    }
-    a i[class*="ion-"] {
-      margin-right: 11px;
-      width: 18px;
-      font-size: 18px;
-    }
-    > a .badge {
-      margin-top: 1px;
-      padding: 3px 8px;
-      background: @darker_black;
-      font-weight: 300;
-      font-size: 10px;
-    }
-    > a .caret {
-      float: right;
-      margin-top: 9px;
-    }
-  }
-}
-
 
 .sidebar .has-sub.active > .sub-menu,
 .sidebar .has-sub.expand > .sub-menu {
@@ -472,28 +469,29 @@
 
 
 /* Wide Sidebar Setting */
-
-.page-with-wide-sidebar .sidebar,
-.page-with-wide-sidebar.page-sidebar-minified .sidebar-bg.sidebar-right,
-.page-with-wide-sidebar.page-sidebar-minified .sidebar.sidebar-right {
-  width: 250px;
-}
-.page-with-wide-sidebar .content {
-  margin-left: 250px;
-}
-.page-with-wide-sidebar.page-with-right-sidebar .content {
-  margin-right: 250px;
-  margin-left: 0;
-}
-.page-with-wide-sidebar.page-with-two-sidebar .content {
-  margin-left: 250px;
-  margin-right: 250px;
-}
-.page-with-wide-sidebar.page-sidebar-minified .sidebar {
-  width: 60px;
-}
-.page-with-wide-sidebar.page-sidebar-minified .content {
-  margin-left: 60px;
+.page-with-wide-sidebar {
+  .sidebar,
+  &.page-sidebar-minified .sidebar-bg.sidebar-right,
+  &.page-sidebar-minified .sidebar.sidebar-right {
+    width: 250px;
+  }
+  .content {
+    margin-left: 250px;
+  }
+  &.page-with-right-sidebar .content {
+    margin-right: 250px;
+    margin-left: 0;
+  }
+  &.page-with-two-sidebar .content {
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+  &.page-sidebar-minified .sidebar {
+    width: 60px;
+  }
+  &.page-sidebar-minified .content {
+    margin-left: 60px;
+  }
 }
 
 
@@ -506,33 +504,36 @@
 
 .sidebar.sidebar-transparent {
   background: none;
+
+  .nav > li.nav-profile {
+    background: url('@{base-url}/transparent/black-0.3.png');
+    background: rgba(0, 0, 0, 0.25);
+  }
+  .nav > li.has-sub > .sub-menu {
+    background: url('@{base-url}/transparent/black-0.5.png');
+    background: rgba(26, 34, 41, 0.5);
+  }
+  .sub-menu {
+    background: none;
+  }
+  + .sidebar-bg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('@{base-url}/transparent/black-0.5.png');
+    background: rgba(45, 53, 60, 0.75);
+  }
 }
-.sidebar.sidebar-transparent .nav > li.nav-profile {
-  background: url('@{base-url}/transparent/black-0.3.png');
-  background: rgba(0, 0, 0, 0.25);
-}
-.sidebar.sidebar-transparent .nav > li.has-sub > .sub-menu {
-  background: url('@{base-url}/transparent/black-0.5.png');
-  background: rgba(26, 34, 41, 0.5);
-}
-.sidebar.sidebar-transparent .sub-menu {
-  background: none;
-}
+
 .page-sidebar-toggled.page-sidebar-minified .sidebar.sidebar-transparent + .sidebar-bg,
 .sidebar.sidebar-transparent + .sidebar-bg {
   background: url('@{base-url}/sidebar_cover.jpg');
   background-size: auto 100%;
 }
-.sidebar.sidebar-transparent + .sidebar-bg:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('@{base-url}/transparent/black-0.5.png');
-  background: rgba(45, 53, 60, 0.75);
-}
+
 .page-sidebar-minified .sidebar.sidebar-transparent .nav > li.has-sub .sub-menu {
   background: url('@{base-url}/transparent/black-0.7.png');
   background: rgba(26, 34, 41, 0.85);
