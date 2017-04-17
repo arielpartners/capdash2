@@ -39,7 +39,7 @@ Given(/^Providers in the system$/) do |table|
 end
 
 Then(/^I should see the following provider information$/) do |table|
-  providers = JSON.parse(last_response.body).map{ |p| p['name'] }
+  providers = JSON.parse(last_response.body).map { |p| p['name'] }
   entries = table.hashes
   entries.each do |entry|
     expect(providers).to include(entry['Provider'])
@@ -60,7 +60,7 @@ Then(/^I should see the following shelter information$/) do |table|
   entries = table.hashes
   response_body = JSON.parse(last_response.body)
   entries.each do |entry|
-    returned_shelter = response_body.find{|s| s['name'] == entry['Shelter'] }
+    returned_shelter = response_body.find { |s| s['name'] == entry['Shelter'] }
     expect(returned_shelter['name']).to eq(entry['Shelter'])
   end
 end
@@ -82,7 +82,7 @@ Then(/^I should see the following shelter building information$/) do |table|
   response_body = JSON.parse(last_response.body)
   entries = table.hashes
   entries.each do |entry|
-    returned_shelter_building = response_body.find{|b| b['name'] == entry['Building']}
+    returned_shelter_building = response_body.find { |b| b['name'] == entry['Building'] }
     expect(returned_shelter_building['name']).to eq(entry['Building'])
   end
 end
