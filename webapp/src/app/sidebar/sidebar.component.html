@@ -36,16 +36,16 @@
         </a>
         <ul class="sub-menu">
           <li routerLinkActive="active">
-            <a [routerLink]="['/offline-units']"><span class="badge pull-left">817</span>&nbsp;Offline Units</a>
+            <a [routerLink]="['units/offline-units']"><span class="badge pull-left">817</span>&nbsp;Offline Units</a>
           </li>
           <li routerLinkActive="active">
-            <a [routerLink]="['/hero']"><span class="badge pull-left">200</span>&nbsp;HERO</a>
+            <a [routerLink]="['units/hero']"><span class="badge pull-left">200</span>&nbsp;HERO</a>
           </li>
           <li routerLinkActive="active">
-            <a [routerLink]="['/ltr']"><span class="badge pull-left">105</span>&nbsp;L.T.R.</a>
+            <a [routerLink]="['units/ltr']"><span class="badge pull-left">105</span>&nbsp;L.T.R.</a>
           </li>
           <li routerLinkActive="active">
-            <a [routerLink]="['/demand']"><span class="badge pull-left">38</span>&nbsp;Demand & Projections</a>
+            <a [routerLink]="['units/demand']"><span class="badge pull-left">38</span>&nbsp;Demand & Projections</a>
           </li>
         </ul>
       </li>
@@ -71,20 +71,20 @@
           <li routerLinkActive="active">
             <a [routerLink]="['/reports/general']">General Reports</a>
           </li>
-          <li class="has-sub" ng-class="{active:$state.includes('app.reports')}">
+          <li class="has-sub" routerLinkActive="active" ng-class="{active:$state.includes('app.reports')}">
             <a href="javascript:"><b class="caret pull-right"></b> Other Reports</a>
             <ul class="sub-menu">
               <li routerLinkActive="active">
                 <a [routerLink]="['/reports/all']">Report All</a>
               </li>
               <li routerLinkActive="active">
-                <a ui-sref="app.reports.v1" >Report 1</a>
+                <a [routerLink]="['/reports/v1']">Report 1</a>
               </li>
               <li routerLinkActive="active">
-                <a ui-sref="app.reports.v2" >Report 2</a>
+                <a [routerLink]="['/reports/v2']">Report 2</a>
               </li>
               <li routerLinkActive="active">
-                <a ui-sref="app.reports.v3" >Report 3</a>
+                <a [routerLink]="['/reports/v3']">Report 3</a>
               </li>
             </ul>
           </li>
@@ -100,7 +100,7 @@
         </a>
         <ul class="sub-menu">
           <li routerLinkActive="active">
-            <a ui-sref="app.settings.general">General Settings</a>
+            <a [routerLink]="['/settings/general']">General Settings</a>
           </li>
         </ul>
       </li>
@@ -114,7 +114,7 @@
         </a>
         <ul class="sub-menu">
           <li routerLinkActive="active">
-            <a ui-sref="app.help.general">General Help</a>
+            <a [routerLink]="['/help/general']">General Help</a>
           </li>
         </ul>
       </li>
