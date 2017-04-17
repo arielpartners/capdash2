@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :shelters, only: [:show, :index] do
     resources :buildings, controller: 'shelter_buildings', only: [:show]
   end
+  resources :shelter_buildings, only: :index
 end

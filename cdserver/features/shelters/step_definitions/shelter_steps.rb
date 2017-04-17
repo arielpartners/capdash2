@@ -64,3 +64,25 @@ Then(/^I should see the following shelter information$/) do |table|
     expect(returned_shelter['name']).to eq(entry['Shelter'])
   end
 end
+
+Given(/^Shelters buildings in the system$/) do |table|
+  entries = table.hashes
+  entries.each do |entry|
+    addr = entry['Street Address'].split(' ')
+    address = Address.new(street_number: addr[0], street_name: addr[1..-1].join,
+                          borough: entry['Borough'], zip: entry['Zip Code'])
+    provider = Provider.new(name: entry['Provider'])
+    shelter = Shelter.new(name: entry['Shelter'], provider: provider)
+    ShelterBuilding.create!(name: entry['Building'], shelter: shelter,
+                            address: address)
+  end
+end
+
+Then(/^I should see the following shelter building information$/) do |table|
+  response_body = JSON.parse(last_response.body)
+  entries = table.hashes
+  entries.each do |entry|
+    returned_shelter_building = response_body.find{|b| b['name'] == entry['Building']}
+    expect(returned_shelter_building['name']).to eq(entry['Building'])
+  end
+end
