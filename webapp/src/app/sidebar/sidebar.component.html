@@ -13,14 +13,16 @@
         </div>
       </li>
       <! -- ================== 01.0 Dashboard ============================================================= -->
-      <li class="has-sub">
+      <li class="has-sub" routerLinkActive="active">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-dashboard"></i>
           <span>Dashboard</span>
         </a>
         <ul class="sub-menu">
-          <li ui-sref-active="active"><a ui-sref="app.dashboard.dashboard">Dashboard</a></li>
+          <li routerLinkActive="active">
+            <a ui-sref="app.dashboard.dashboard">Dashboard</a>
+          </li>
         </ul>
       </li>
 
@@ -49,57 +51,77 @@
       </li>
 
       <! -- ================== 03.0 Edit Demand & Projections ============================================================= -->
-      <li ui-sref-active="active"><a ui-sref="app.editDemand.edit"><i class="fa fa-edit"></i> <span>Edit Demand & Projections</span></a></li>
+      <li routerLinkActive="active">
+        <a ui-sref="app.editDemand.edit"><i class="fa fa-edit"></i> <span>Edit Demand & Projections</span></a>
+      </li>
 
       <! -- ================== 04.0 IVC ============================================================= -->
-      <li ui-sref-active="active"><a ui-sref="app.ivc"><i class="fa fa-calendar-check-o"></i> <span>Intake/Vacancy Control</span></a></li>
+      <li routerLinkActive="active" routerLinkActive="active">
+        <a ui-sref="app.ivc"><i class="fa fa-calendar-check-o"></i> <span>Intake/Vacancy Control</span></a>
+      </li>
 
       <! -- ================== 05.0 Reports ============================================================= -->
-      <li class="has-sub">
+      <li class="has-sub" routerLinkActive="active">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-bar-chart"></i>
           <span>Reports </span>
         </a>
         <ul class="sub-menu">
-          <li ui-sref-active="active"><a ui-sref="app.reports.general">General Reports</a></li>
+          <li routerLinkActive="active">
+            <a [routerLink]="['/reports/general']">General Reports</a>
+          </li>
           <li class="has-sub" ng-class="{active:$state.includes('app.reports')}">
             <a href="javascript:"><b class="caret pull-right"></b> Other Reports</a>
             <ul class="sub-menu">
-              <li ui-sref-active="active"><a ui-sref="app.reports.all">Report All</a></li>
-              <li ui-sref-active="active"><a ui-sref="app.reports.v1" >Report 1</a></li>
-              <li ui-sref-active="active"><a ui-sref="app.reports.v2" >Report 2</a></li>
-              <li ui-sref-active="active"><a ui-sref="app.reports.v3" >Report 3</a></li>
+              <li routerLinkActive="active">
+                <a [routerLink]="['/reports/all']">Report All</a>
+              </li>
+              <li routerLinkActive="active">
+                <a ui-sref="app.reports.v1" >Report 1</a>
+              </li>
+              <li routerLinkActive="active">
+                <a ui-sref="app.reports.v2" >Report 2</a>
+              </li>
+              <li routerLinkActive="active">
+                <a ui-sref="app.reports.v3" >Report 3</a>
+              </li>
             </ul>
           </li>
         </ul>
       </li>
 
       <! -- ================== 09.0 App Settings ============================================================= -->
-      <li class="has-sub">
+      <li class="has-sub" routerLinkActive="active">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-cogs"></i>
           <span>App Settings</span>
         </a>
         <ul class="sub-menu">
-          <li ui-sref-active="active"><a ui-sref="app.settings.general">General Settings</a></li>
+          <li routerLinkActive="active">
+            <a ui-sref="app.settings.general">General Settings</a>
+          </li>
         </ul>
       </li>
 
       <! -- ================== 10.0 App Help ============================================================= -->
-      <li class="has-sub">
+      <li class="has-sub" routerLinkActive="active">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-life-buoy"></i>
           <span>App Help</span>
         </a>
         <ul class="sub-menu">
-          <li ui-sref-active="active"><a ui-sref="app.help.general">General Help</a></li>
+          <li routerLinkActive="active">
+            <a ui-sref="app.help.general">General Help</a>
+          </li>
         </ul>
       </li>
       <!-- begin sidebar minify button -->
-      <li><a href="javascript:" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+      <li>
+        <a href="javascript:" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+      </li>
       <!-- end sidebar minify button -->
     </ul>
     <!-- end sidebar nav -->
