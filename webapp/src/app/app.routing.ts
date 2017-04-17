@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
   {path: 'forecasts', loadChildren: 'app/forecasts/forecasts.module#ForecastsModule'},
   {path: 'hotels', loadChildren: 'app/hotels/hotels.module#HotelsModule'},
-  {path: 'units/offlineUnits', loadChildren: 'app/offline-units/offline-units.module#OfflineUnitsModule'},
+  {path: 'offline-units', loadChildren: 'app/offline-units/offline-units.module#OfflineUnitsModule'},
   {path: '**', component: PageNotFoundComponent }
 ];
 

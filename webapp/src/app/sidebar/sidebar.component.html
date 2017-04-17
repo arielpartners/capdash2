@@ -25,7 +25,7 @@
       </li>
 
       <! -- ================== 02.0 Units ============================================================= -->
-      <li class="has-sub expand">
+      <li class="has-sub expand " routerLinkActive="active">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <span class="badge pull-right">817</span>
@@ -34,7 +34,7 @@
         </a>
         <ul class="sub-menu">
           <li routerLinkActive="active">
-            <a [routerLink]="['/units/offline-units']"><span class="badge pull-left">817</span>&nbsp;Offline Units</a>
+            <a [routerLink]="['/offline-units']"><span class="badge pull-left">817</span>&nbsp;Offline Units</a>
           </li>
           <li ui-sref-active="active"><a ui-sref="app.units.hero"><span class="badge pull-left">200</span>&nbsp;HERO</a></li>
           <li ui-sref-active="active"><a ui-sref="app.units.ltr"><span class="badge pull-left">105</span>&nbsp;L.T.R.</a></li>

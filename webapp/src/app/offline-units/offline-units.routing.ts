@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OfflineUnitsComponent } from './offline-units.component';
 
 const OFFLINE_UNITS_ROUTES: Routes = [
-  { path: 'units/offline-units', component: OfflineUnitsComponent }
+  { path: 'offline-units', component: OfflineUnitsComponent }
 ];
 
 export const offlineUnitsRouting = RouterModule.forChild(OFFLINE_UNITS_ROUTES);
