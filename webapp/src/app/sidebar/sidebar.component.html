@@ -13,7 +13,10 @@
         </div>
       </li>
       <! -- ================== 01.0 Dashboard ============================================================= -->
-      <li class="has-sub" routerLinkActive="active">
+      <li class="has-sub"
+          routerLinkActive="active"
+          (click)="expandedMenu = 'dashboard'"
+          [ngClass]="{'expand': expandedMenu === 'dashboard' }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-dashboard"></i>
@@ -21,13 +24,16 @@
         </a>
         <ul class="sub-menu">
           <li routerLinkActive="active">
-            <a ui-sref="app.dashboard.dashboard">Dashboard</a>
+            <a [routerLink]="['dashboard']">Dashboard</a>
           </li>
         </ul>
       </li>
 
       <! -- ================== 02.0 Units ============================================================= -->
-      <li class="has-sub expand " routerLinkActive="active">
+      <li class="has-sub"
+          routerLinkActive="active"
+          (click)="expandedMenu = 'units'"
+          [ngClass]="{'expand': expandedMenu === 'units' }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <span class="badge pull-right">817</span>
@@ -61,7 +67,10 @@
       </li>
 
       <! -- ================== 05.0 Reports ============================================================= -->
-      <li class="has-sub" routerLinkActive="active">
+      <li class="has-sub"
+          routerLinkActive="active"
+          (click)="expandedMenu = 'reports'"
+          [ngClass]="{'expand': expandedMenu === 'reports' }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-bar-chart"></i>
@@ -92,7 +101,10 @@
       </li>
 
       <! -- ================== 09.0 App Settings ============================================================= -->
-      <li class="has-sub" routerLinkActive="active">
+      <li class="has-sub"
+          routerLinkActive="active"
+          (click)="expandedMenu = 'settings'"
+          [ngClass]="{'expand': expandedMenu === 'settings' }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-cogs"></i>
@@ -106,7 +118,10 @@
       </li>
 
       <! -- ================== 10.0 App Help ============================================================= -->
-      <li class="has-sub" routerLinkActive="active">
+      <li class="has-sub"
+          routerLinkActive="active"
+          (click)="expandedMenu = 'help'"
+          [ngClass]="{'expand': expandedMenu === 'help' }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-life-buoy"></i>

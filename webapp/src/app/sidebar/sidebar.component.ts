@@ -10,6 +10,7 @@ export class SidebarComponent implements OnInit {
   appShTitle = 'CapDash';
   appTitle = 'Shelter Capacity & Planning';
 
+  expandedMenu = 'dashboard';
   sidebarMinimized = false;
 
   constructor() { }
