@@ -3,3 +3,27 @@
   padding-bottom: 5px;
   border: 1px black;
 }
+
+label {
+  cursor: pointer;
+  line-height: 20px;
+  padding: 17px 15px;
+  margin: 0;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  /* For mobile, it's typically better to position checkbox on top of clickable
+     area and turn opacity to 0 instead. */
+}
+
+/* Toggled State */
+input[type=checkbox]:checked ~ div {
+display: block;
+}
+
+input[type=checkbox]:checked ~ ul {
+display: block;
+}
