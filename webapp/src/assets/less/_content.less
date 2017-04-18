@@ -1,8 +1,12 @@
 /* Content & content elements */
 
 .content {
-    margin-left: 220px;
-    padding: 20px 25px;
+  padding: 20px 25px;
+  max-width: @sidebar-width;
+
+  &.page-sidebar-minified {
+    width: @sidebar-minimized-width;
+  }
 }
 .content.content-full-width {
     padding: 0;

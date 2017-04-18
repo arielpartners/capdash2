@@ -1,5 +1,5 @@
 <!-- begin #sidebar -->
-<div id="sidebar" class="sidebar" ng-class="{ 'sidebar-transparent': setting.layout.pageSidebarTransparent }">
+<div id="sidebar" class="sidebar" [ngClass]="{'page-sidebar-minified': sidebarMinimized }">
 
   <!-- begin sidebar scrollbar -->
   <div data-scrollbar="true" data-height="100%">
@@ -93,7 +93,7 @@
         </ul>
       </li>
       <!-- begin sidebar minify button -->
-      <li><a href="javascript:" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+      <li><a href="javascript:" (click)="sidebarMinimized = !sidebarMinimized;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
       <!-- end sidebar minify button -->
     </ul>
     <!-- end sidebar nav -->
