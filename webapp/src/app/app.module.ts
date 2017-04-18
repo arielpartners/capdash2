@@ -1,10 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {NgModule} from '@angular/core';
-import {NgReduxModule} from '@angular-redux/store';
-import {NgReduxRouterModule} from '@angular-redux/router';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -22,19 +20,17 @@ import {SidebarComponent} from './sidebar/sidebar.component';
         HeaderComponent,
         HomeComponent,
         PageNotFoundComponent,
-        SidebarComponent,
+    SidebarComponent
     ],
     imports: [
-        AppRoutingModule,
+    NgbModule.forRoot(),
         BrowserModule,
-        ForecastsModule,
         FormsModule,
-        HotelsModule,
         HttpModule,
-        NgbModule.forRoot(),
-        NgReduxModule,
-        NgReduxRouterModule,
+    ForecastsModule,
         OfflineUnitsModule,
+    HotelsModule,
+    AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
