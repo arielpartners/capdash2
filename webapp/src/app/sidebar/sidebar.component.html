@@ -70,7 +70,7 @@
       <li class="has-sub"
           routerLinkActive="active"
           (click)="expandedMenu = 'reports'"
-          [ngClass]="{'expand': expandedMenu === 'reports' }">
+          [ngClass]="{'expand': expandedMenu.startsWith('reports') }">
         <a href="javascript:">
           <b class="caret pull-right"></b>
           <i class="fa fa-bar-chart"></i>
@@ -80,7 +80,10 @@
           <li routerLinkActive="active">
             <a [routerLink]="['/reports/general']">General Reports</a>
           </li>
-          <li class="has-sub" routerLinkActive="active" ng-class="{active:$state.includes('app.reports')}">
+            <li class="has-sub"
+                routerLinkActive="active"
+                (click)="$event.stopPropagation(); expandedMenu = 'reports/other'"
+                [ngClass]="{'expand': expandedMenu === ('reports/other') }">
             <a href="javascript:"><b class="caret pull-right"></b> Other Reports</a>
             <ul class="sub-menu">
               <li routerLinkActive="active">
