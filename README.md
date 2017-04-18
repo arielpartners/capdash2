@@ -170,8 +170,9 @@ maintaining multiple applications or multiple versions of the same application.
   * The top hit will be the "official" Postgres image.  Click `Create`
 
 3. **Create new or start up existing Postgres Docker Container**
+  * The first time, do the below.  This only needs to be done the first time:
   * Execute `sudo docker run --name postgres -e POSTGRES_PASSWORD=password -d postgres`
-  * If you already did this and are restarting your computer, you will just start it
+  * Then start the container:
   * Execute `docker start postgres`
 
 4. **Test Postgres using PSQL from the command line**
