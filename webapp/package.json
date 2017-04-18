@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ng build",
     "e2e": "ng e2e",
-    "hmr": "ng serve --extract-css=true --open --hmr -e=hmr --proxy-config config/proxy.conf.json",
+    "hmr": "ng serve --open --hmr -e=hmr --proxy-config config/proxy.conf.json",
     "json-server": "nodemon --watch ./json-server/ ./json-server/server.js --delay 2",
     "lint": "ng lint",
     "ng": "ng",
