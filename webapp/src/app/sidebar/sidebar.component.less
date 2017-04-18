@@ -37,7 +37,6 @@
     }
 
     > li {
-      min-height: 44px;
       > a i {
         float: left;
         margin-right: 15px;
@@ -64,7 +63,6 @@
       }
 
       > a {
-        min-height: 44px;
         padding: 8px 20px;
         line-height: 20px;
         color: @sidebar_text_color;
@@ -103,7 +101,12 @@
 
     .nav > li > a {
       padding: 12px 20px;
+      min-height: 44px;
+      &:last-child {
+        min-height: 0;
+      }
     }
+
     .nav-profile,
     .nav-header,
     .nav > li > a > span {
