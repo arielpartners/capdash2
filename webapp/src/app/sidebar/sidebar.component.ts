@@ -10,6 +10,8 @@ export class SidebarComponent implements OnInit {
   appShTitle = 'CapDash';
   appTitle = 'Shelter Capacity & Planning';
 
+  sidebarMinimized = false;
+
   constructor() { }
 
   ngOnInit() {
