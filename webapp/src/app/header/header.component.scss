@@ -19,21 +19,18 @@ label {
   line-height: 20px;
   padding: 0 15px;
   margin: 0;
+  align-items: center;
 }
 
-input[type=radio] {
+/* Checkbox/Radio input hack */
+input[type=radio].radio-hack {
   position: absolute;
   top: -9999px;
   left: -9999px;
-  /* For mobile, it's typically better to position checkbox on top of clickable
-     area and turn opacity to 0 instead. */
 }
 
 /* Toggled State */
-input[type=radio]:checked ~ div {
-display: block;
-}
-
-input[type=radio]:checked ~ ul {
-display: block;
+input[type=radio].radio-hack:checked ~ div,
+input[type=radio].radio-hack:checked ~ ul {
+  display: block;
 }
