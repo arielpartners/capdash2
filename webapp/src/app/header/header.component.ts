@@ -12,6 +12,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleRadio(e) {
+    let radio = e.target;
+    if (!radio.canClear) {
+      radio.canClear = true;
+      e.target.checked = true;
+    } else {
+      e.target.checked = false;
+      radio.canClear = false;
+    }
+  }
 
   onStore() {
     console.log('storing');
