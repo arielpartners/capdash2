@@ -254,8 +254,9 @@ maintaining multiple applications or multiple versions of the same application.
   2. **Install Chocolatey**
     * Chocolatey is a Homebrew-style package manager for windows
     * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
+    * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio): https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell
   3. **Clone this repo**
-    * `git clone git@github.com:arielpartners/capdash2.git`
+    * `git clone https://github.com/arielpartners/capdash2.git`
 
 ### <a name="windows-frontend"></a>Frontend
 
