@@ -318,7 +318,7 @@ maintaining multiple applications or multiple versions of the same application.
 
   1. **Install Ruby**
     * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
-    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/)
+    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/). Make sure you install both Ruby and the devkit.
     * Ruby 2.3 appears to be the most recent available on Windows
 
   2. **Install Rails**
