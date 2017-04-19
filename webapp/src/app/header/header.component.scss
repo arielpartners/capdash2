@@ -11,7 +11,7 @@ label {
   margin: 0;
 }
 
-input[type=checkbox] {
+input[type=radio] {
   position: absolute;
   top: -9999px;
   left: -9999px;
@@ -20,10 +20,10 @@ input[type=checkbox] {
 }
 
 /* Toggled State */
-input[type=checkbox]:checked ~ div {
+input[type=radio]:checked ~ div {
 display: block;
 }
 
-input[type=checkbox]:checked ~ ul {
+input[type=radio]:checked ~ ul {
 display: block;
 }
