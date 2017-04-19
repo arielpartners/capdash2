@@ -30,7 +30,7 @@
         color: #fff;
         background: @defaultColor;
         border-color: @defaultColor;
-        
+
         &:hover,
         &:focus,
         &:active,
@@ -38,7 +38,7 @@
             background: @hoverColor;
             border-color: @hoverColor;
         }
-        
+
     }
     .open .dropdown-toggle.@{buttonClassName} {
         background: @hoverColor;
@@ -48,4 +48,17 @@
     .input-group-btn .btn.@{buttonClassName}:not(.active) + .btn.@{buttonClassName} {
         border-left-color: @hoverColor;
     }
+}
+
+.flexbox() {
+  display: flex;
+}
+
+.flex-box-row {
+  .flexbox();
+  flex-direction: row;
+}
+.flex-box-col {
+  .flexbox();
+  flex-direction: col;
 }
