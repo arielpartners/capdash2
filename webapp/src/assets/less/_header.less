@@ -1,13 +1,9 @@
 /* Header & header elements */
-
-.header {
-    z-index: 1020;
-    margin-bottom: 0;
-}
 .navbar {
     .border-radius(0);
     .box-shadow(0 0 2px rgba(0,0,0,0.3));
     border: none;
+    margin-bottom: 0;
 }
 .navbar.navbar-default {
     background: @white;
@@ -29,7 +25,7 @@
 .navbar-brand {
     margin-right: 10px;
     padding: 12px 20px;
-    height: 54px;
+    height: auto;
     width: 220px;
     font-weight: 100;
     font-size: 18px;
@@ -59,7 +55,7 @@
 .navbar-default .navbar-toggle .icon-bar {
     background: #333;
 }
-.navbar-toggle:hover, 
+.navbar-toggle:hover,
 .navbar-toggle:focus {
     background: none !important;
     .opacity(0.6);
@@ -75,8 +71,8 @@
 .navbar-nav > li > a:focus {
     .opacity(0.6);
 }
-.navbar-nav > .open > a, 
-.navbar-nav > .open > a:hover, 
+.navbar-nav > .open > a,
+.navbar-nav > .open > a:hover,
 .navbar-nav > .open > a:focus {
     background: none !important;
     color: #333;
@@ -88,6 +84,11 @@
 .fade .navbar-form .form-control {
     -webkit-animation: none;
 }
+
+.navbar-form .form-group {
+  position: relative;
+}
+
 .navbar-form .form-control {
     width: 200px;
     padding: 5px 15px;
@@ -109,8 +110,8 @@
 }
 .navbar-form .btn-search {
     position: absolute;
-    right: 15px;
-    top: 12px;
+    right: 0;
+    top: 0;
     height: 30px;
     padding-top: 5px;
     padding-bottom: 5px;

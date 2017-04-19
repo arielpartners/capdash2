@@ -1,199 +1,195 @@
-<div id="header" class="header navbar navbar-default navbar-fixed-top ng-scope" ng-controller="headerController">
-  <!-- begin container-fluid -->
-  <div class="container-fluid">
-    <!-- begin mobile sidebar expand / collapse button -->
-    <div class="navbar-header">
-      <a href="'http://intranet.dhs.nycnet:4444'" class="navbar-brand"><img src="assets/img/dss_logo_white_sm.png" alt="dhs_logo" width="190" height="33"></a>
-      <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <!-- end mobile sidebar expand / collapse button -->
+<div id="header" class="flex-box-row navbar" ng-controller="headerController">
+  <!-- begin mobile sidebar expand / collapse button -->
+  <div class="navbar-header">
+    <a href="'http://intranet.dhs.nycnet:4444'" class="navbar-brand"><img src="assets/img/dss_logo_white_sm.png" alt="dhs_logo" width="190" height="33"></a>
+    <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <!-- end mobile sidebar expand / collapse button -->
 
-    <!-- begin navbar-collapse -->
-    <!-- begin mega menu -->
-    <div class="collapse navbar-collapse pull-left" id="top-navbar">
-      <ul class="nav navbar-nav">
-        <li class="dropdown dropdown-lg">
-          <label for="dropdown-menu-lg-checkbox" class="dropdown-toggle text-white ng-binding">
-            <i class="fa fa-th-large fa-fw"></i> DSS Intranet Main Menu <b class="caret"></b>
-          </label>
-          <input type="radio" name="header" id="dropdown-menu-lg-checkbox" (click)="toggleRadio($event)">
-          <div class="dropdown-menu dropdown-menu-lg">
+  <!-- begin navbar-collapse -->
+  <!-- begin mega menu -->
+  <div class="header-nav-left flex-box-row" id="top-navbar">
+    <div class="dropdown dropdown-lg">
+      <label for="dropdown-menu-lg-checkbox" class="dropdown-toggle text-white ng-binding">
+        <i class="fa fa-th-large fa-fw"></i> DSS Intranet Main Menu <b class="caret"></b>
+      </label>
+      <input type="radio" name="header" id="dropdown-menu-lg-checkbox" (click)="toggleRadio($event)">
+      <div class="dropdown-menu dropdown-menu-lg">
+        <div class="row">
+          <!-- Apps Menu -->
+          <div class="col-md-2 col-sm-2">
+            <h4 class="dropdown-header"><i class="fa fa-desktop"></i> Apps </h4>
             <div class="row">
-              <!-- Apps Menu -->
-              <div class="col-md-2 col-sm-2">
-                <h4 class="dropdown-header"><i class="fa fa-desktop"></i> Apps </h4>
-                <div class="row">
-                  <div>
-                    <ul class="nav">
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Cares</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> VETS Tracking System <span class="badge badge-success">UPDATE</span></a></li>
-                      <li><a href="index.html" class="text-ellipsis text-black ng-binding"><i class="fa fa-chevron-circle-right fa-fw fa-lg text-inverse"></i> Capacity &amp; Planning (CapApp)</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> ORCA</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Resources Menu -->
-              <div class="col-md-2 col-sm-2">
-                <h4 class="dropdown-header"><i class="fa fa-book"></i> Resources </h4>
-                <div class="row">
-                  <div>
-                    <ul class="nav">
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> City Share</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Help Desk</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> FAQs</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Policy &amp; Procedures</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> DEOA</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Office of the Ombudsman</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Staff Directory</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Programs Menu -->
-              <div class="col-md-2 col-sm-2">
-                <h4 class="dropdown-header"><i class="fa fa-diamond"></i> Programs </h4>
-                <div class="row">
-                  <div>
-                    <ul class="nav">
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Adults </a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Capacity Planning &amp; Development</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Communications &amp; External Affairs</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Families</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Policy &amp; Planning</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Prevention</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Security &amp; Emergency Operations</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- Administration Menu -->
-              <div class="col-md-2 col-sm-2">
-                <h4 class="dropdown-header"><i class="fa fa-building"></i> Administration </h4>
-                <div class="row">
-                  <div>
-                    <ul class="nav">
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Administrative Division </a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Fiscal Procurment</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Fleet Services</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Human Resources</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Legal Affairs</a></li>
-                      <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> OIT</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- News Menu -->
-              <div class="col-md-4 col-sm-4">
-                <h4 class="dropdown-header"><i class="fa fa-newspaper-o"></i> Latest News</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero purus, fermentum at libero convallis, auctor dignissim mauris. Nunc laoreet pellentesque turpis sodales ornare. Nunc vestibulum nunc lorem, at sodales velit malesuada congue. Nam est tortor, tincidunt sit amet eros vitae, aliquam finibus mauris.
-                </p>
-                <p>
-                  Fusce ac ligula laoreet ante dapibus mattis. Nam auctor vulputate aliquam. Suspendisse efficitur, felis sed elementum eleifend, ipsum tellus sodales nisi, ut condimentum nisi sem in nibh. Phasellus suscipit vulputate purus at venenatis. Quisque luctus tincidunt tempor.
-                </p>
+              <div>
+                <ul class="nav">
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Cares</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> VETS Tracking System <span class="badge badge-success">UPDATE</span></a></li>
+                  <li><a href="index.html" class="text-ellipsis text-black ng-binding"><i class="fa fa-chevron-circle-right fa-fw fa-lg text-inverse"></i> Capacity &amp; Planning (CapApp)</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> ORCA</a></li>
+                </ul>
               </div>
             </div>
           </div>
+          <!-- Resources Menu -->
+          <div class="col-md-2 col-sm-2">
+            <h4 class="dropdown-header"><i class="fa fa-book"></i> Resources </h4>
+            <div class="row">
+              <div>
+                <ul class="nav">
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> City Share</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Help Desk</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> FAQs</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Policy &amp; Procedures</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> DEOA</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Office of the Ombudsman</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Staff Directory</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Programs Menu -->
+          <div class="col-md-2 col-sm-2">
+            <h4 class="dropdown-header"><i class="fa fa-diamond"></i> Programs </h4>
+            <div class="row">
+              <div>
+                <ul class="nav">
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Adults </a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Capacity Planning &amp; Development</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Communications &amp; External Affairs</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Families</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Policy &amp; Planning</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Prevention</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Security &amp; Emergency Operations</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Administration Menu -->
+          <div class="col-md-2 col-sm-2">
+            <h4 class="dropdown-header"><i class="fa fa-building"></i> Administration </h4>
+            <div class="row">
+              <div>
+                <ul class="nav">
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Administrative Division </a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Fiscal Procurment</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Fleet Services</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Human Resources</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> Legal Affairs</a></li>
+                  <li><a href="javascript:" class="text-ellipsis text-black"><i class="fa fa-angle-right fa-fw fa-lg text-inverse"></i> OIT</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Menu -->
+          <div class="col-md-4 col-sm-4">
+            <h4 class="dropdown-header"><i class="fa fa-newspaper-o"></i> Latest News</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero purus, fermentum at libero convallis, auctor dignissim mauris. Nunc laoreet pellentesque turpis sodales ornare. Nunc vestibulum nunc lorem, at sodales velit malesuada congue. Nam est tortor, tincidunt sit amet eros vitae, aliquam finibus mauris.
+            </p>
+            <p>
+              Fusce ac ligula laoreet ante dapibus mattis. Nam auctor vulputate aliquam. Suspendisse efficitur, felis sed elementum eleifend, ipsum tellus sodales nisi, ut condimentum nisi sem in nibh. Phasellus suscipit vulputate purus at venenatis. Quisque luctus tincidunt tempor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Help Desk Menu -->
+    <!-- <li>
+        <a href="http://cityshare.nycnet/html/my-desk/html/home/home.shtml" class=" text-white"><i class="fa fa-th-large fa-life-buoy"></i> {{$state.current.data.agencyTitle}} Help Desk </a>
+    </li> -->
+    <!-- Staff Directory Menu -->
+    <!-- <li>
+        <a href="https://intranet.dhs.nycnet/Search/Pages/PeopleSearch.aspx" class=" text-white"><i class="fa fa-th-large fa-users"></i> Staff Directory </a>
+    </li> -->
+    <!-- Contact Menu -->
+    <div  >
+      <a href="#" class="text-white ng-binding"><i class="fa fa-envelope-o"></i> Contact DSS OIT</a>
+    </div>
+  </div>
+  <!-- end navbar-collapse -->
+  <!-- ./end mega menu -->
+
+  <!-- begin header navigation right -->
+  <div class="header-nav-right flex-box-row">
+    <!-- begin header global search -->
+    <div>
+      <form class="navbar-form full-width ng-pristine ng-valid">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Global Enter keyword">
+          <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+    <!-- ./end header global search -->
+    <!-- begin notifications dropdown menu -->
+
+
+    <div class="dropdown">
+      <label for="media-list-checkbox" class="dropdown-toggle f-s-14">
+        <i class="fa fa-bell-o text-white"></i>
+        <span class="label">4</span>
+      </label>
+      <input type="radio" name="header" id="media-list-checkbox" (click)="toggleRadio($event)">
+      <ul class="dropdown-menu media-list pull-right animated fadeInDown">
+        <li class="dropdown-header">Notifications (4)</li>
+        <li class="media">
+          <a href="javascript:">
+            <div class="media-left"><i class="fa fa-warning media-object bg-red"></i></div>
+            <div class="media-body">
+              <h6 class="media-heading">Violations Reports Updated</h6>
+              <div class="text-muted f-s-11">3 minutes ago</div>
+            </div>
+          </a>
         </li>
-        <!-- Help Desk Menu -->
-        <!-- <li>
-            <a href="http://cityshare.nycnet/html/my-desk/html/home/home.shtml" class=" text-white"><i class="fa fa-th-large fa-life-buoy"></i> {{$state.current.data.agencyTitle}} Help Desk </a>
-        </li> -->
-        <!-- Staff Directory Menu -->
-        <!-- <li>
-            <a href="https://intranet.dhs.nycnet/Search/Pages/PeopleSearch.aspx" class=" text-white"><i class="fa fa-th-large fa-users"></i> Staff Directory </a>
-        </li> -->
-        <!-- Contact Menu -->
-        <li>
-          <a href="#" class="text-white ng-binding"><i class="fa fa-envelope-o"></i> Contact DSS OIT</a>
+        <li class="media">
+          <a href="javascript:">
+            <div class="media-left"><img src="assets/img/user-ka.jpg" class="media-object" alt=""></div>
+            <div class="media-body">
+              <h6 class="media-heading">Kari Auer</h6>
+              <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+              <div class="text-muted f-s-11">25 minutes ago</div>
+            </div>
+          </a>
+        </li>
+        <li class="media">
+          <a href="javascript:">
+            <div class="media-left"><img src="assets/img/user-mj.jpg" class="media-object" alt=""></div>
+            <div class="media-body">
+              <h6 class="media-heading">Michael Jabbour</h6>
+              <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+              <div class="text-muted f-s-11">35 minutes ago</div>
+            </div>
+          </a>
+        </li>
+        <li class="media">
+          <a href="javascript:">
+            <div class="media-left"><i class="fa fa-warning media-object bg-green"></i></div>
+            <div class="media-body">
+              <h6 class="media-heading"> Cleared Violations Today</h6>
+              <div class="text-muted f-s-11">14</div>
+            </div>
+          </a>
+        </li>
+        <li class="dropdown-footer text-center">
+          <a href="javascript:">View more</a>
         </li>
       </ul>
     </div>
-    <!-- end navbar-collapse -->
-    <!-- ./end mega menu -->
+    <!-- ./end notifications dropdown menu -->
 
-    <!-- begin header navigation right -->
-    <ul class="nav navbar-nav navbar-right">
-      <!-- begin header global search -->
-      <li>
-        <form class="navbar-form full-width ng-pristine ng-valid">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Global Enter keyword">
-            <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-          </div>
-        </form>
-      </li>
-      <!-- ./end header global search -->
-      <!-- begin notifications dropdown menu -->
-
-
-      <li class="dropdown">
-        <label for="media-list-checkbox" class="dropdown-toggle f-s-14">
-          <i class="fa fa-bell-o text-white"></i>
-          <span class="label">4</span>
-        </label>
-        <input type="radio" name="header" id="media-list-checkbox" (click)="toggleRadio($event)">
-        <ul class="dropdown-menu media-list pull-right animated fadeInDown">
-          <li class="dropdown-header">Notifications (4)</li>
-          <li class="media">
-            <a href="javascript:">
-              <div class="media-left"><i class="fa fa-warning media-object bg-red"></i></div>
-              <div class="media-body">
-                <h6 class="media-heading">Violations Reports Updated</h6>
-                <div class="text-muted f-s-11">3 minutes ago</div>
-              </div>
-            </a>
-          </li>
-          <li class="media">
-            <a href="javascript:">
-              <div class="media-left"><img src="assets/img/user-ka.jpg" class="media-object" alt=""></div>
-              <div class="media-body">
-                <h6 class="media-heading">Kari Auer</h6>
-                <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
-                <div class="text-muted f-s-11">25 minutes ago</div>
-              </div>
-            </a>
-          </li>
-          <li class="media">
-            <a href="javascript:">
-              <div class="media-left"><img src="assets/img/user-mj.jpg" class="media-object" alt=""></div>
-              <div class="media-body">
-                <h6 class="media-heading">Michael Jabbour</h6>
-                <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
-                <div class="text-muted f-s-11">35 minutes ago</div>
-              </div>
-            </a>
-          </li>
-          <li class="media">
-            <a href="javascript:">
-              <div class="media-left"><i class="fa fa-warning media-object bg-green"></i></div>
-              <div class="media-body">
-                <h6 class="media-heading"> Cleared Violations Today</h6>
-                <div class="text-muted f-s-11">14</div>
-              </div>
-            </a>
-          </li>
-          <li class="dropdown-footer text-center">
-            <a href="javascript:">View more</a>
-          </li>
-        </ul>
-      </li>
-      <!-- ./end notifications dropdown menu -->
-
-      <!-- begin language dropdown menu -->
-      <!-- ngIf: setting.layout.pageLanguageBar === true -->
-    <li class="dropdown navbar-language ng-scope" ng-if="setting.layout.pageLanguageBar === true">
+    <!-- begin language dropdown menu -->
+    <!-- ngIf: setting.layout.pageLanguageBar === true -->
+    <div class="dropdown navbar-language ng-scope" ng-if="setting.layout.pageLanguageBar === true">
       <label for="language-checkbox" class="dropdown-toggle f-s-14">
         <span class="flag-icon flag-icon-us" title="us"></span>
         <span class="name text-white">EN</span> <b class="caret text-white"></b>
       </label>
-      <input type="radio" name="header" id="language-checkbox" (click)="toggleRadio($event)">
+      <input type="checkbox" id="language-checkbox" (click)="toggleRadio($event)">
       <ul class="dropdown-menu animated fadeInRight p-b-0">
         <li class="arrow"></li>
         <li><a href="javascript:"><span class="flag-icon flag-icon-us" title="us"></span> English</a></li>
@@ -204,33 +200,31 @@
         <li class="divider m-b-0"></li>
         <li class="text-center"><a href="javascript:"><i class="fa fa-sliders"></i> More Options</a></li>
       </ul>
-    </li><!-- end ngIf: setting.layout.pageLanguageBar === true -->
-      <!-- ./end language dropdown menu -->
+    </div><!-- end ngIf: setting.layout.pageLanguageBar === true -->
+    <!-- ./end language dropdown menu -->
 
-      <!-- begin user dropdown menu -->
-      <li class="dropdown navbar-user">
-        <label for="user-checkbox" class="dropdown-toggle f-s-14">
-          <img src="assets/img/user-rbs.jpg" alt="user-rbs" width="128" height="128">
-          <span class="hidden-xs text-white">Robert Santore</span> <b class="caret text-white"></b>
-        </label>
-        <input type="radio" name="header" id="user-checkbox" (click)="toggleRadio($event)">
-        <ul class="dropdown-menu animated fadeInLeft">
-          <li class="arrow"></li>
-          <li><a ui-sref="app.extra.profile" href="#/app/extra/profile"><i class="fa fa-pencil-square-o"></i> Edit Profile</a></li>
-          <li><a href="javascript:"><span class="badge badge-danger pull-right">3</span> <i class="fa fa-folder-open"></i> New Assigned</a></li>
-          <li><a ui-sref="app.work_orders.calendar" href="#/app/work_orders/work_orders/calendar"><i class="fa fa-calendar"></i> Work Orders Schedule</a></li>
-          <li><a href="./#/app/settings/settings/app_settings" class="ng-binding"><i class="fa fa-cogs"></i> CapApp Setting</a></li>
-          <li class="divider"></li>
-          <li><a href="./#/user/login/login-logout" class="ng-binding"><i class="fa fa-sign-out"></i> Log Out of CapApp</a></li>
-        </ul>
-      </li>
-      <!-- ./end user dropdown menu -->
+    <!-- begin user dropdown menu -->
+    <div   class="dropdown navbar-user">
+      <label for="user-checkbox" class="dropdown-toggle f-s-14">
+        <img src="assets/img/user-rbs.jpg" alt="user-rbs" width="128" height="128">
+        <span class="hidden-xs text-white">Robert Santore</span> <b class="caret text-white"></b>
+      </label>
+      <input type="radio" name="header" id="user-checkbox" (click)="toggleRadio($event)">
+      <ul class="dropdown-menu animated fadeInLeft">
+        <li class="arrow"></li>
+        <li><a ui-sref="app.extra.profile" href="#/app/extra/profile"><i class="fa fa-pencil-square-o"></i> Edit Profile</a></li>
+        <li><a href="javascript:"><span class="badge badge-danger pull-right">3</span> <i class="fa fa-folder-open"></i> New Assigned</a></li>
+        <li><a ui-sref="app.work_orders.calendar" href="#/app/work_orders/work_orders/calendar"><i class="fa fa-calendar"></i> Work Orders Schedule</a></li>
+        <li><a href="./#/app/settings/settings/app_settings" class="ng-binding"><i class="fa fa-cogs"></i> CapApp Setting</a></li>
+        <li class="divider"></li>
+        <li><a href="./#/user/login/login-logout" class="ng-binding"><i class="fa fa-sign-out"></i> Log Out of CapApp</a></li>
+      </ul>
+    </div>
+    <!-- ./end user dropdown menu -->
 
-      <!-- begin right side bar menu -->
-      <!-- ngIf: setting.layout.pageTwoSidebar === true -->
-      <!-- ./end right side bar menu -->
-    </ul>
-    <!-- end header navigation right -->
+    <!-- begin right side bar menu -->
+    <!-- ngIf: setting.layout.pageTwoSidebar === true -->
+    <!-- ./end right side bar menu -->
   </div>
-  <!-- end container-fluid -->
+  <!-- end header navigation right -->
 </div>

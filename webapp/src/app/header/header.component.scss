@@ -1,13 +1,24 @@
 #header {
   background-color: #263E53;
-  padding-bottom: 5px;
   border: 1px black;
+  min-height: 53px;
+  z-index: 1020;
+  align-items: center;
+
+  .header-nav-left {
+    flex-grow: 1;
+    min-width: 310px;
+  }
+
+  .header-nav-right {
+    align-items: center;
+  }
 }
 
 label {
   cursor: pointer;
   line-height: 20px;
-  padding: 17px 15px;
+  padding: 0 15px;
   margin: 0;
 }
 
