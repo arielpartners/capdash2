@@ -9,15 +9,24 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  toggleRadio(e) {
+    let radioBtn = e.target,
+        radioButtons = document.getElementsByName("header");
 
-  onStore() {
-    console.log('storing');
-  }
+    Array.prototype.forEach.call(radioButtons, dropdown => {
+      if (dropdown !== radioBtn) {
+        dropdown.canClear = false;
+      }
+    });
 
-  onFetch() {
-    console.log('fetching');
+    if (!radioBtn.canClear) {
+      radioBtn.canClear = true;
+      e.target.checked = true;
+    } else {
+      e.target.checked = false;
+      radioBtn.canClear = false;
+    }
   }
 }
