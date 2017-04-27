@@ -10,6 +10,7 @@
         <div class="info">
           {{agencyTitle}} {{appShTitle}}
           <small>{{appTitle}}</small>
+          <small>Version: {{version$}}</small>
         </div>
       </li>
       <! -- ================== 01.0 Dashboard ============================================================= -->
@@ -139,7 +140,7 @@
       <!-- begin sidebar minify button -->
       <li>
         <a href="javascript:"
-           (click)="sidebarMinimized = !sidebarMinimized;" 
+           (click)="sidebarMinimized = !sidebarMinimized;"
            class="sidebar-minify-btn">
           <i class="fa fa-angle-double-left"></i>
         </a>

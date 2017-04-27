@@ -10,7 +10,7 @@ import { ITEM_TYPES } from '../core/ajax/item/item.types';
 export const rootReducer = composeReducers(
   defaultFormReducer(),
   combineReducers({
-    item: createItemReducer(ITEM_TYPES.INFO),
-    lions: createItemReducer(ITEM_TYPES.USER),
+    info: createItemReducer(ITEM_TYPES.INFO),
+    user: createItemReducer(ITEM_TYPES.USER),
     router: routerReducer,
 }));

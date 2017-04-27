@@ -1,23 +1,23 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgModule} from '@angular/core';
 import {NgReduxModule} from '@angular-redux/store';
 import {NgReduxRouterModule} from '@angular-redux/router';
+import {RouterModule} from '@angular/router';
 
 // This app's ngModules
-
 import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app.routing';
-import {ForecastsModule} from './forecasts/forecasts.module';
-import {HeaderComponent} from './header/header.component';
-import {HomeComponent} from './home/home.component';
-import {HotelsModule} from './hotels/hotels.module';
+import {appRoutes} from './app.routes';
+import {ForecastsModule} from './containers/forecasts/forecasts.module';
+import {HeaderComponent} from './components/header/header.component';
+import {HomeComponent} from './containers/home/home.component';
+import {HotelsModule} from './containers/hotels/hotels.module';
 import {ItemModule} from './core/ajax/item/item.module';
-import {OfflineUnitsModule} from './offline-units/offline-units.module';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {SidebarComponent} from './sidebar/sidebar.component';
+import {OfflineUnitsModule} from './containers/offline-units/offline-units.module';
+import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {StoreModule} from './store/store.module';
 
 @NgModule({
@@ -29,17 +29,17 @@ import {StoreModule} from './store/store.module';
     SidebarComponent
   ],
   imports: [
-    NgbModule.forRoot(),
     BrowserModule,
+    ForecastsModule,
     FormsModule,
+    HotelsModule,
     HttpModule,
     ItemModule,
-    ForecastsModule,
-    OfflineUnitsModule,
-    HotelsModule,
-    AppRoutingModule,
+    NgbModule.forRoot(),
     NgReduxModule,
     NgReduxRouterModule,
+    OfflineUnitsModule,
+    RouterModule.forRoot(appRoutes),
     StoreModule
   ],
   bootstrap: [AppComponent]

@@ -4,7 +4,9 @@
   </div>
   <div class="app-section">
     <div class="app-nav">
-      <cd-sidebar></cd-sidebar>
+      <cd-sidebar [version]="version$"
+                  [loading]="loading$"
+                  [error]="error$"></cd-sidebar>
     </div>
     <div class="app-content">
       <div id="content" class="content">
