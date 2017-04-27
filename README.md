@@ -145,6 +145,7 @@ maintaining multiple applications or multiple versions of the same application.
   * Check the version `sudo npm ls -g typescript` it should be 2.1.6
   * Install angular Command Line Interface globally `sudo npm install -g @angular/cli`
   * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-rc.2
+ 
 
 6. **Install JetBrains WebStorm**
   * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
@@ -153,9 +154,10 @@ maintaining multiple applications or multiple versions of the same application.
   * This will make sure that WebStorm still works if you move to 2FA
 
 7. **Load the webapp project, build and run**
-  * In Webstorm load webapp
+  * In Webstorm load (change directory to) webapp
   * `npm install`
   * `ng serve`
+  * alternatively, for dev, you can `npm run json-server` along with `npm run hmr`
 
 ### Database
 
