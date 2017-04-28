@@ -4,5 +4,12 @@
     "version": "9.9.9",
     "description": "Shelter Capacity Dashboard",
     "hostname": "localhost"
+  },
+  "user_token": {
+    "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTM0Nzk4ODAsInN1YiI6MX0.zzUP-jvWM-_lhhoXt5Jfgd-fjA-JgxC5iYMriBgpgv4"
+  },
+  "user": {
+    "email": "sample_user@dhs.nyc.gov",
+    "name": "John Doe"
   }
 }
