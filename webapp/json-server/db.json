@@ -3,6 +3,6 @@
     "name": "Capdash-Server",
     "version": "9.9.9",
     "description": "Capacity Dashboard",
-    "hostname": "to.be.determined.com"
+    "host": "to.be.determined.com"
   }
 }
