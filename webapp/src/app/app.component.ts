@@ -14,7 +14,7 @@ import {ItemActions} from './core/ajax/item/item.actions';
 })
 export class AppComponent {
   title = 'cd works!';
-  @select(['info', 'item', 'version']) readonly version$: Observable<any>;
+  @select(['info', 'item', 'version']) readonly version$:  Observable<string>;
   @select(['info', 'loading']) readonly loading$: Observable<boolean>;
   @select(['info', 'error']) readonly error$: Observable<any>;
 

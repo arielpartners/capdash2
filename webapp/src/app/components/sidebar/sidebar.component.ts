@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy  } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -7,8 +7,8 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['sidebar.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent implements OnInit {
-  @Input() version: Observable<any>;
+export class SidebarComponent {
+  @Input() version:  Observable<string>;
   @Input() loading: Observable<boolean>;
   @Input() error: Observable<any>;
   agencyTitle = 'DSS';
@@ -17,11 +17,5 @@ export class SidebarComponent implements OnInit {
 
   expandedMenu = 'dashboard';
   sidebarMinimized = false;
-
-  constructor() { }
-
-  ngOnInit() {
-    console.log('version', this.version);
-  }
 
 }
