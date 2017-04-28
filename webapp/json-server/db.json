@@ -1,9 +1,8 @@
 {
   "info": {
-    "name": "Capdash-Server",
+    "name": "capdash2",
     "version": "9.9.9",
-    "description": "Capacity Dashboard",
-    "host": "to.be.determined.com",
-    "isDevServer": true
+    "description": "Shelter Capacity Dashboard",
+    "hostname": "localhost"
   }
 }
