@@ -9,10 +9,10 @@ const INITIAL_STATE: IItem = {
   loading: false,
 };
 
-// A higher-order reducer: accepts an animal type and returns a reducer
-// that only responds to actions for that particular animal type.
+// A higher-order reducer: accepts an item type and returns a reducer
+// that only responds to actions for that particular item type.
 export function createItemReducer(itemType: ItemType) {
-  return function animalReducer(state: IItem = INITIAL_STATE,
+  return function itemReducer(state: IItem = INITIAL_STATE,
                                 action: IPayloadAction<IItem, any>): IItem {
     if (!action.meta || action.meta.itemType !== itemType) {
       return state;
