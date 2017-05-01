@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgModule} from '@angular/core';
@@ -15,6 +15,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {HomeComponent} from './containers/home/home.component';
 import {HotelsModule} from './containers/hotels/hotels.module';
 import {ItemModule} from './core/ajax/item/item.module';
+import {LoginComponent} from './containers/login/login.component';
 import {OfflineUnitsModule} from './containers/offline-units/offline-units.module';
 import {PageNotFoundComponent} from './core/page-not-found/page-not-found.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
@@ -26,7 +27,8 @@ import {StoreModule} from './store/store.module';
     HeaderComponent,
     HomeComponent,
     PageNotFoundComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import {StoreModule} from './store/store.module';
     NgReduxModule,
     NgReduxRouterModule,
     OfflineUnitsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     StoreModule
   ],

@@ -11,6 +11,7 @@ export class RootEpics {
   public createEpics() {
     return [
       this.itemEpics.createEpic(ITEM_TYPES.INFO),
+      this.itemEpics.createEpic(ITEM_TYPES.TOKEN),
       this.itemEpics.createEpic(ITEM_TYPES.USER),
     ];
   }

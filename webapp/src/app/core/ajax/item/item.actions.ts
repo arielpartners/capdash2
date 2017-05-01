@@ -29,4 +29,12 @@ export class ItemActions {
       error,
     };
   }
+
+  submitForm(itemType, form) {
+    return {
+      type: ItemActions.LOAD_STARTED,
+      meta: { itemType },
+      form
+    };
+  }
 }
