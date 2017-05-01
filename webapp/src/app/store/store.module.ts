@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { NgReduxRouterModule, NgReduxRouter } from '@angular-redux/router';
 import { provideReduxForms } from '@angular-redux/form';
+//import createLogger from 'redux-logger';
 
 // Redux ecosystem stuff.
 //import { combineEpics, createEpicMiddleware } from 'redux-observable';
@@ -15,6 +16,9 @@ import { provideReduxForms } from '@angular-redux/form';
 import { IAppState } from './root.types';
 import { rootReducer } from './root.reducer';
 import { RootEpics } from './root.epics';
+
+const persistStore = require('redux-persist').persistStore;
+const autoRehydrate = require('redux-persist').autoRehydrate;
 
 @NgModule({
   imports: [NgReduxModule, NgReduxRouterModule],
@@ -33,13 +37,17 @@ export class StoreModule {
     store.configureStore(
       rootReducer,
       {},
-      [...rootEpics.createEpics()],
-      devTools.isEnabled() ? [ devTools.enhancer() ] : []);
+      [/*createLogger(),*/ ...rootEpics.createEpics()],
+      devTools.isEnabled() ? [devTools.enhancer(), autoRehydrate()] : []);
 
     // Enable syncing of Angular router state with our Redux store.
     ngReduxRouter.initialize();
 
     // Enable syncing of Angular form state with our Redux store.
     provideReduxForms(store);
+
+    // begin periodically persisting the store
+    persistStore(store);
+
   }
 }
