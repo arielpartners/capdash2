@@ -13,25 +13,29 @@ export class HeaderComponent implements OnInit {
 
   clearStorage(e) {
     localStorage.clear();
-    //this.toggleRadio(null);
+    this.toggleRadio(undefined);
   }
 
   toggleRadio(e) {
-    let radioBtn = e.target,
+    let radioBtn = e ? e.target : undefined,
         radioButtons = document.getElementsByName("header");
 
     Array.prototype.forEach.call(radioButtons, dropdown => {
       if (dropdown !== radioBtn) {
         dropdown.canClear = false;
+        dropdown.checked = false;
       }
     });
 
-    if (!radioBtn.canClear) {
-      radioBtn.canClear = true;
-      e.target.checked = true;
-    } else {
-      e.target.checked = false;
-      radioBtn.canClear = false;
+    if (radioBtn) {
+      if (!radioBtn.canClear) {
+        radioBtn.canClear = true;
+        e.target.checked = true;
+      } else {
+        e.target.checked = false;
+        radioBtn.canClear = false;
+      }
     }
+
   }
 }
