@@ -1,3 +1,0 @@
-class CaseType < Identifier
-
-end

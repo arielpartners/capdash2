@@ -1,4 +1,6 @@
+#
 # a building that houses shelter units
+#
 class ShelterBuilding < ApplicationRecord
   has_many :floors
   has_many :places, through: :floors, source: :places
@@ -25,6 +27,18 @@ class ShelterBuilding < ApplicationRecord
       self.case_type = CaseType.find_by(name: type)
     else
       super
+    end
+  end
+
+  def self.find_by_case_type(name)
+    classifier = Classifier.find_by(name: name)
+    return if classifier.nil?
+    children = classifier.children
+    if children.any?
+      names = children.map(&:name) << name
+      ShelterBuilding.includes(:case_type).where(classifiers: { name: names })
+    else
+      ShelterBuilding.includes(:case_type).where(classifiers: { name: name })
     end
   end
 
