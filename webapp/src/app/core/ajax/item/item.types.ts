@@ -1,5 +1,6 @@
 export const ITEM_TYPES = {
   INFO: 'info',
+  TOKEN: 'user_token',
   USER: 'user',
 };
 

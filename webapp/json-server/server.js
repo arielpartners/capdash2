@@ -56,17 +56,13 @@ server.use(jsonServer.bodyParser);
 server.use(function(req, res, next) {
     if (req.method === 'POST') {
         switch (req.url) {
-            case '/login':
-                console.log('Login', req.body);
-                req.body.firstName = 'Test';
-                req.body.lastName = 'Testerson';
-                req.body.tokenSeed = 'JUaHJlZSBFeWVkI';
+            case '/api/user_token':
+                console.log('Requesting token', req.body);
+                req.body.jwt = data.user_token.jwt;
+                req.body.username = undefined;
+                req.body.password = undefined;
+                console.log('Set token', req.body);
                 break;
-
-            case '/api/v1/login.html?service=capdash':
-                res.redirect('/api/v1/logged-in.html');
-                break;
-
 
             default:
                 console.log('Post operation', req.url);

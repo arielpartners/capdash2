@@ -6,8 +6,9 @@ import { ITEM_TYPES, ItemType } from './item.types';
 
 // A fake API on the internets.
 const URLS = {
-  [ITEM_TYPES.INFO]: '/api/info', // 'http://www.mocky.io/v2/588d70ad100000e50f2d2983',
-  [ITEM_TYPES.USER]: '/api/user', // 'http://www.mocky.io/v2/588d702d100000d50f2d2980',
+  [ITEM_TYPES.INFO]: '/api/info',
+  [ITEM_TYPES.TOKEN]: '/api/user_token',
+  [ITEM_TYPES.USER]: '/api/user',
 };
 
 @Injectable()
@@ -17,6 +18,14 @@ export class ItemService {
   get(itemType: ItemType) {
     return this.http.get(URLS[itemType])
       .map(resp => resp.json());
+  }
+
+  post(itemType: ItemType, form: Object) {
+    return this.http.post(URLS[itemType], form)
+      .map(
+        resp =>
+          resp.json()
+      );
   }
 
 }

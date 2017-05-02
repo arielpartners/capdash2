@@ -1,17 +1,22 @@
 <div class="app">
-  <div class="app-header">
+  <div *ngIf="token$ | async"
+       class="app-header">
     <cd-header></cd-header>
   </div>
   <div class="app-section">
-    <div class="app-nav">
+    <div *ngIf="token$ | async"
+         class="app-nav">
       <cd-sidebar [version]="version$"
                   [loading]="loading$"
                   [error]="error$"></cd-sidebar>
     </div>
     <div class="app-content">
-      <div id="content" class="content">
+      <div [hidden]="!(token$ | async) && !((route$ | async) === '/login')"
+           id="content"
+           class="content">
         <router-outlet></router-outlet>
       </div>
+
     </div>
   </div>
 </div>
