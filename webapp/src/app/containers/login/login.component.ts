@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {NgRedux} from '@angular-redux/store';
+import {Router} from "@angular/router";
 
 import {IAppState} from '../../store/root.types';
 import {ITEM_TYPES} from '../../core/ajax/item/item.types';
@@ -15,17 +16,19 @@ export class LoginComponent{
 
   // We are going to declare our variables here. We’ll have a loginForm that will represent our reactive form, an authenticated boolean that will be true or false based on the users auth status and finally a profile object that will hold the user data.
   loginForm : FormGroup;
-  authenticated: boolean;
   store: NgRedux<IAppState>;
   //user : Object;
 
-  constructor(fb: FormBuilder, ngRedux: NgRedux<IAppState>, private actions: ItemActions) {
+  constructor(fb: FormBuilder,
+              ngRedux: NgRedux<IAppState>,
+              private ngRouter:Router,
+              private actions: ItemActions) {
     // We’ll check if the user is logged in once this component is loaded. We’ll do this by checking if a jwt key value pair exists in local storage.
-    // if(localStorage.getItem('jwt')){
-    //   this.authenticated = true;
-    //   // If the jwt key value exists, we’ll know the user is logged in, so we’ll get their profile.
-    //   this.user = JSON.parse(localStorage.getItem('user'));
-    // }
+    const token = JSON.parse(localStorage.getItem('reduxPersist:token'));
+    const loginUrl = '/login';
+    if (token && window.location.pathname === loginUrl) {
+      this.ngRouter.navigate(['']);
+    }
     // For our form, we’ll just have two fields and we’ll require both of them to be filled out before the form can be submitted
     this.loginForm = fb.group({
       'email': [null, Validators.required],

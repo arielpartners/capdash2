@@ -209,7 +209,9 @@
         <li><a ui-sref="app.work_orders.calendar" href="#/app/work_orders/work_orders/calendar"><i class="fa fa-calendar"></i> Work Orders Schedule</a></li>
         <li><a href="./#/app/settings/settings/app_settings" class="ng-binding"><i class="fa fa-cogs"></i> CapApp Setting</a></li>
         <li class="divider"></li>
-        <li><a href="./#/user/login/login-logout" class="ng-binding"><i class="fa fa-sign-out"></i> Log Out of CapApp</a></li>
+        <li><a (click)="clearStorage(); false"
+               [routerLink]="['login']"
+               class="ng-binding"><i class="fa fa-sign-out"></i> Log Out of CapApp</a></li>
       </ul>
     </div>
     <!-- ./end user dropdown menu -->

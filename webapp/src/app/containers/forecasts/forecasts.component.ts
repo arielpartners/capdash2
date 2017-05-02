@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'cd-forecasts',
   templateUrl: './forecasts.component.html',
   styleUrls: ['./forecasts.component.scss']
 })
-export class ForecastsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class ForecastsComponent { }

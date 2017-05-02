@@ -11,6 +11,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
+  clearStorage(e) {
+    localStorage.clear();
+    //this.toggleRadio(null);
+  }
+
   toggleRadio(e) {
     let radioBtn = e.target,
         radioButtons = document.getElementsByName("header");
