@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgRedux} from '@angular-redux/store';
+import {IAppState} from '../../store/root.types';
 
 @Component({
   selector: 'cd-header',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngRedux: NgRedux<IAppState>) {}
 
   ngOnInit() {}
 
-  clearStorage(e) {
+  logout(e) {
     localStorage.clear();
     this.toggleRadio(undefined);
+    this.ngRedux.dispatch({type: 'logged-out'});
+
   }
 
   toggleRadio(e) {

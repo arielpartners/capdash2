@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {NgRedux} from '@angular-redux/store';
 import {Router} from "@angular/router";
@@ -12,7 +12,7 @@ import {ItemActions} from '../../core/ajax/item/item.actions';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent{
+export class LoginComponent implements OnInit{
 
   // We are going to declare our variables here. We’ll have a loginForm that will represent our reactive form, an authenticated boolean that will be true or false based on the users auth status and finally a profile object that will hold the user data.
   loginForm : FormGroup;
@@ -23,12 +23,7 @@ export class LoginComponent{
               ngRedux: NgRedux<IAppState>,
               private ngRouter:Router,
               private actions: ItemActions) {
-    // We’ll check if the user is logged in once this component is loaded. We’ll do this by checking if a jwt key value pair exists in local storage.
-    const token = JSON.parse(localStorage.getItem('reduxPersist:token'));
-    const loginUrl = '/login';
-    if (token && window.location.pathname === loginUrl) {
-      this.ngRouter.navigate(['']);
-    }
+
     // For our form, we’ll just have two fields and we’ll require both of them to be filled out before the form can be submitted
     this.loginForm = fb.group({
       'email': [null, Validators.required],
@@ -36,6 +31,15 @@ export class LoginComponent{
     });
 
     this.store = ngRedux;
+  }
+
+  ngOnInit() {
+    // We’ll check if the user is logged in once this component is loaded. We’ll do this by checking if a jwt key value pair exists in local storage.
+    const token = JSON.parse(localStorage.getItem('reduxPersist:token'));
+    const loginUrl = '/login';
+    if (token && window.location.pathname === loginUrl) {
+      this.ngRouter.navigate(['']);
+    }
   }
 
   submitForm(value: any) {

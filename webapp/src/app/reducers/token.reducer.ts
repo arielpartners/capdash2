@@ -14,6 +14,9 @@ export const token = (state = null, {type, payload}) => {
         return state;
       }
 
+    case 'logged-out':
+      return null;
+
     default:
       return state;
   }

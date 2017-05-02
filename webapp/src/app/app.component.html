@@ -11,9 +11,12 @@
                   [error]="error$"></cd-sidebar>
     </div>
     <div class="app-content">
-      <div id="content" class="content">
+      <div [hidden]="!(token$ | async) && !((route$ | async) === '/login')"
+           id="content"
+           class="content">
         <router-outlet></router-outlet>
       </div>
+
     </div>
   </div>
 </div>
