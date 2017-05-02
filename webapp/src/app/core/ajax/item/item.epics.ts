@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {/* Epic, */ createEpicMiddleware} from 'redux-observable';
-//import { Action, Store } from 'redux';
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -17,6 +16,19 @@ export class ItemEpics {
 
   public createEpic(itemType: ItemType) {
     return createEpicMiddleware(this.createLoadItemEpic(itemType));
+  }
+
+  public createSimpleEpic(props) {
+    return createEpicMiddleware(this.simpleEpic(props));
+  }
+
+  private simpleEpic({action, filter, trigger}) {
+    return action$ => action$
+      .ofType(trigger)
+      .filter(({payload}) => {
+        return !!payload[filter];
+      })
+      .map(() => action);
   }
 
   private createLoadItemEpic(itemType) {
