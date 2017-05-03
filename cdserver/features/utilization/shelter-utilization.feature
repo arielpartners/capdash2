@@ -59,7 +59,7 @@ Feature: Shelter Utilization
 
   @ignore
   Scenario: Average Weekly Per-Shelter Utilization
-    When I ask for following average utilization by calendar period
+    When I ask for the following average utilization by calendar period
       | Group By | Period Type | Period Ending |
       | Shelter  | Week        | 6/11/2016     |
     Then The system should provide the following average utilization

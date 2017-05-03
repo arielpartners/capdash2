@@ -38,9 +38,14 @@ Given(/^The following census information exists in the system$/) do |table|
   end
 end
 
-When(/^I ask for following average utilization by calendar period$/) do |table|
-  # TODO: custom queries
-  post 'api/utilization'
+When(/^I ask for the following average utilization by calendar period$/) do |table|
+  params = table.hashes[0]
+  body = {
+    group_by: params['Group By'],
+    period_type: params['Period Type'],
+    period_ending: params['Period Ending']
+  }
+  post 'api/utilization', body
 end
 
 Then(/^The system should provide the following average utilization$/) do |table|
