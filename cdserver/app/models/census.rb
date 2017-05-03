@@ -50,26 +50,34 @@ class Census < ApplicationRecord
 
   def self.utilization_by_case_type(period_type, period_ending)
     sql = <<-SQL
-      SELECT case_type.name as group,
-      avg(utilization) as percentage,
-      avg(count) as avg_utilization
-      FROM censuses as c
-      JOIN shelter_buildings as b
-      ON b.id = c.shelter_building_id
+      SELECT case_type.name as case_type,
+      sum(c.avg_utilization) as avg_utilization
+      FROM (
+        SELECT shelter_building_id,
+        avg(count) as avg_utilization
+        FROM censuses
+        GROUP BY shelter_building_id
+      ) AS c
+      JOIN shelter_buildings
+      ON c.shelter_building_id = shelter_buildings.id
       JOIN classifiers as case_type
-      ON b.case_type_id = case_type.id
-      GROUP BY case_type.id
+      ON shelter_buildings.case_type_id = case_type.id
+      GROUP BY case_type.name
     SQL
     results = Census.find_by_sql(sql)
-    results.map do |result|
+    results.map! do |result|
       {
-        group: result.group,
-        period_ending: period_ending,
-        percentage: (result.percentage * 100).round,
-        average_utilization: result.avg_utilization.round,
-        average_capacity: nil #TODO: figure this out
+        group: result.case_type,
+        average_utilization: result.avg_utilization.round
       }
     end
+    results.each do |result|
+      buildings = CaseType.find_by(name: result[:group]).shelter_buildings
+      capacity = buildings.reduce(0) { |sum, building| sum + building.places.count }
+      percentage = ((result[:average_utilization].to_f / capacity) * 100).round
+      result.merge!(average_capacity: capacity, percentage: percentage)
+    end
+    results
   end
 
   def calculate_utilization

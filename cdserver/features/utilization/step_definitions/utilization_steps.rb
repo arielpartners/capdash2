@@ -60,6 +60,7 @@ Then(/^The system should provide the following average utilization by ([^"]*)$/)
     formatted_percentage = "#{result['percentage']}%"
     expect(formatted_percentage).to eq(entry['Percentage'])
     expect(result['average_utilization'].to_s).to eq(entry['Average Utilization'])
+    expect(result['average_capacity'].to_s).to eq(entry['Average Capacity']) if entry['Average Capacity']
     expect(result['address']).to eq(entry['Street Address'])
   end
 end
