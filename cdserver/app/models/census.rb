@@ -77,6 +77,24 @@ class Census < ApplicationRecord
       percentage = ((result[:average_utilization].to_f / capacity) * 100).round
       result.merge!(average_capacity: capacity, percentage: percentage)
     end
+    utilization_sum = Census.find_by_sql <<-SQL
+      SELECT sum(c.avg_utilization) as total
+      FROM (
+        SELECT shelter_building_id,
+        avg(count) as avg_utilization
+        FROM censuses
+        GROUP BY shelter_building_id
+      ) AS c
+    SQL
+    total_utilization = utilization_sum[0].total.round
+    total_capacity = Place.count
+    percentage = ((total_utilization.to_f / total_capacity) * 100).round
+    results << {
+      group: 'Total',
+      average_capacity: total_capacity,
+      average_utilization: total_utilization,
+      percentage: percentage
+    }
     results
   end
 
