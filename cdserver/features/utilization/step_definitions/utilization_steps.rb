@@ -38,19 +38,29 @@ Given(/^The following census information exists in the system$/) do |table|
   end
 end
 
-When(/^I ask for following average utilization by calendar period$/) do |table|
-  # TODO: custom queries
-  post 'api/utilization'
+When(/^I ask for the following average utilization by calendar period$/) do |table|
+  params = table.hashes[0]
+  body = {
+    group_by: params['Group By'],
+    period_type: params['Period Type'],
+    period_ending: params['Period Ending']
+  }
+  post 'api/utilization', body
 end
 
-Then(/^The system should provide the following average utilization$/) do |table|
+Then(/^The system should provide the following average utilization by ([^"]*)$/) do |grouping, table|
   results = JSON.parse(last_response.body)
   entries = table.hashes
   entries.each do |entry|
-    result = results.find { |r| entry['Facility'] == r['facility'] }
+    result =  if grouping == 'Shelter'
+                results.find { |r| entry['Facility'] == r['facility'] }
+              else
+                results.find { |r| entry['Group'] == r['group'] }
+              end
     formatted_percentage = "#{result['percentage']}%"
     expect(formatted_percentage).to eq(entry['Percentage'])
     expect(result['average_utilization'].to_s).to eq(entry['Average Utilization'])
+    expect(result['average_capacity'].to_s).to eq(entry['Average Capacity']) if entry['Average Capacity']
     expect(result['address']).to eq(entry['Street Address'])
   end
 end
