@@ -56,11 +56,12 @@ server.use(jsonServer.bodyParser);
 server.use(function(req, res, next) {
     if (req.method === 'POST') {
         switch (req.url) {
-            case '/api/user_token':
+          case '/api/user_token':
                 console.log('Requesting token', req.body);
                 req.body.jwt = data.user_token.jwt;
-                req.body.username = undefined;
-                req.body.password = undefined;
+                req.body.auth.email = undefined;
+                req.body.auth.password = undefined;
+                req.body.auth = undefined;
                 console.log('Set token', req.body);
                 break;
 
