@@ -60,6 +60,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "less-loader": "^4.0.3",
+    "ng2-mock-component": "0.0.6",
     "nodemon": "1.11.0",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
