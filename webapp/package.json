@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve --proxy-config config/proxy.conf.json",
-    "test": "ng test",
+    "test": "ng test --watch=false",
+    "test:watch": "ng test",
     "coverage": "ng test -cc",
     "coverage-open": "open ./coverage/index.html"
   },
