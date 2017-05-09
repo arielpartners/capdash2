@@ -14,7 +14,8 @@
     "test": "ng test --watch=false",
     "test:watch": "ng test",
     "coverage": "ng test -cc",
-    "coverage-open": "open ./coverage/index.html"
+    "coverage-open": "open ./coverage/index.html",
+    "posttest": "npm run lint"
   },
   "engines": {
     "node": ">=6.9.5"
