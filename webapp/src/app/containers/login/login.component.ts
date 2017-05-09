@@ -12,18 +12,18 @@ import {ItemActions} from '../../core/ajax/item/item.actions';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   // We are going to declare our variables here. We’ll have a loginForm that will represent our reactive form,
   // an authenticated boolean that will be true or false based on the users auth status and finally a profile
   // object that will hold the user data.
-  loginForm : FormGroup;
+  loginForm: FormGroup;
   store: NgRedux<IAppState>;
   // user : Object;
 
   constructor(fb: FormBuilder,
               ngRedux: NgRedux<IAppState>,
-              private ngRouter:Router,
+              private ngRouter: Router,
               private actions: ItemActions) {
 
     // For our form, we’ll just have two fields and we’ll require both of them to be filled out before the form can be submitted

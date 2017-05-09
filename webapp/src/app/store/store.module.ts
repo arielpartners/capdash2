@@ -7,11 +7,6 @@ import {NgModule} from '@angular/core';
 import {NgReduxModule, NgRedux, DevToolsExtension} from '@angular-redux/store';
 import {NgReduxRouterModule, NgReduxRouter} from '@angular-redux/router';
 import {provideReduxForms} from '@angular-redux/form';
-//import createLogger from 'redux-logger';
-//import {autoRehydrate, persistStore} from 'redux-persist';
-
-// Redux ecosystem stuff.
-//import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 // The top-level reducers and epics that make up our app's logic.
 import {IAppState} from './root.types';
@@ -30,7 +25,7 @@ export class StoreModule {
   constructor(public store: NgRedux<IAppState>,
               devTools: DevToolsExtension,
               ngReduxRouter: NgReduxRouter,
-              rootEpics: RootEpics,) {
+              rootEpics: RootEpics ) {
     // Tell Redux about our reducers and epics. If the Redux DevTools
     // chrome extension is available in the browser, tell Redux about
     // it too.
