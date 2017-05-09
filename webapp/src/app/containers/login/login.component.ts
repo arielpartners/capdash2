@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit{
 
   submitForm(value: any) {
     // Once the form is submitted and we get the users email and password we’ll format our request based on the Auth0 API.
-    let form = {
+    const form = {
       'auth': {
         'email': value.email,
         'password': value.password,
