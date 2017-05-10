@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'zoo-spinner',
+  selector: 'cd-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: [ './spinner.component.css' ],
 })

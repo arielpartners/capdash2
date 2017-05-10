@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { Action } from 'redux';
+// import { Action } from 'redux';
 
 @Injectable()
 export class AppActions {
@@ -8,6 +8,6 @@ export class AppActions {
     loadData() {
         return {
             type: AppActions.LOAD_DATA
-        }
+        };
     }
 }

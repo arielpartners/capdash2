@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleRadio(e) {
-    let radioBtn = e ? e.target : undefined,
-        radioButtons = document.getElementsByName("header");
+    const radioBtn = e ? e.target : undefined,
+        radioButtons = document.getElementsByName('header');
 
     Array.prototype.forEach.call(radioButtons, dropdown => {
       if (dropdown !== radioBtn) {

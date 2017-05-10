@@ -12,7 +12,8 @@ import {ItemService} from './item.service';
 @Injectable()
 export class ItemEpics {
   constructor(private service: ItemService,
-              private actions: ItemActions,) {
+              private actions: ItemActions,
+  ) {
   }
 
   /**

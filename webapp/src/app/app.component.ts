@@ -2,7 +2,7 @@ import {Component, ChangeDetectionStrategy, AfterViewInit} from '@angular/core';
 import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs/Observable';
 
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'cd-root',
@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
   @select(['info', 'loading']) readonly loading$: Observable<boolean>;
   @select(['info', 'error']) readonly error$: Observable<any>;
 
-  constructor(private ngRouter:Router) { }
+  constructor(private ngRouter: Router) { }
 
   ngAfterViewInit() {
     const token = JSON.parse(localStorage.getItem('reduxPersist:token'));
