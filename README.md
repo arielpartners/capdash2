@@ -69,7 +69,7 @@ Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStac
 
 ## Building the Application
 
-Please see the [front-end README](./webapp/README.md) and [back-end README](./cdserver/README.md) respectively.
+Please see the [front-end README](./capdash2-client/README.md) and [back-end README](./capdash2-server/README.md) respectively.
 
 ## Running the Application
 
@@ -84,8 +84,8 @@ Prod | http://localhost:8080 | testuser | testpassword |
 1. **Count lines of code**
   * `chmod a+x utils/count-sloc;utils/count-sloc`
 
-2. **webapp version number**
-  * See version in [`webapp/package.json`](./webapp/package.json)
+2. **capdash2-client version number**
+  * See version in [`capdash2-client/package.json`](./capdash2-client/package.json)
 
 3. **Back-end version number**
   * See version in [`cdserver/config/initializers/application.rb`](./cdserver/config/initializers/application.rb)
@@ -119,7 +119,8 @@ These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequi
   * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
 
 5. **Clone this repo**
-  * `git clone git@github.com:arielpartners/capdash2.git`
+  * `git clone --recursive git@github.com:arielpartners/capdash2.git`
+  * to keep submodules updated: `git submodule update`
 
 ### Frontend
 
@@ -153,8 +154,8 @@ maintaining multiple applications or multiple versions of the same application.
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that WebStorm still works if you move to 2FA
 
-7. **Load the webapp project, build and run**
-  * In Webstorm load (change directory to) webapp
+7. **Load the capdash2-client project, build and run**
+  * In Webstorm load (change directory to) capdash2-client
   * `npm install`
   * `npm start`
   * alternatively, for dev, you can `npm run json-server` along with `npm run hmr`
@@ -239,7 +240,7 @@ maintaining multiple applications or multiple versions of the same application.
   * We just installed postgres to get pg and then uninstalled it immediately
 
 8. **Load the server project, build and run**
-  * In RubyMine load cdserver project
+  * In RubyMine load capdash2-server project
   * We are using [these instructions](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres)
   * `bundle install`
   * `rails db:setup`
@@ -258,7 +259,8 @@ maintaining multiple applications or multiple versions of the same application.
     * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
     * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
   3. **Clone this repo**
-    * `git clone https://github.com/arielpartners/capdash2.git`
+    * `git clone --recursive https://github.com/arielpartners/capdash2.git`
+    * to keep submodules updated: `git submodule update`
 
 ### <a name="windows-frontend"></a>Frontend
 
@@ -286,8 +288,8 @@ maintaining multiple applications or multiple versions of the same application.
     * Go to Preferences/Version Control/GitHub and generate token, then test it
     * This will make sure that WebStorm still works if you move to 2FA
 
-  5. **Load the webapp project, build and run**
-    * In Webstorm load webapp
+  5. **Load the capdash2-client project, build and run**
+    * In Webstorm load capdash2-client
     * `npm install`
     * `npm start`
 
@@ -343,7 +345,7 @@ maintaining multiple applications or multiple versions of the same application.
     * `gem install pg`
 
   6. **Load the server project, build and run**
-    * In RubyMine load cdserver project
+    * In RubyMine load capdash2-server project
     * `bundle install`
     * `rails db:setup`
     * `rails db:migrate`

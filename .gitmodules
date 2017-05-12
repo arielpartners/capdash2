@@ -1,0 +1,6 @@
+[submodule "capdash2-client"]
+	path = capdash2-client
+	url = https://github.com/arielpartners/capdash2-client
+[submodule "capdash2-server"]
+	path = capdash2-server
+	url = https://github.com/arielpartners/capdash2-server.git
