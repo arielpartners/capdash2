@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# adapted from https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407
+#
+
+echo "Ensure that we get clear diffs for submodules"
+git config --global diff.submodule log
+
+echo "Make sure new commits for submodules are fetched when container updates"
+git config --global fetch.recurseSubmodules on-demand
+
+echo "Ensure that git status includes status for both submodules"
+git config --global status.submoduleSummary true
+
+echo "Fetching submodules"
+git submodule update --init --recursive
+
+echo "Synchronizing the submodule URLS"
+git submodule sync --recursive
+
+echo "Performing checkout for master branch for capdash2-server"
+cd capdash2-server; git checkout master; cd ..
+
+echo "Performing checkout for master branch for capdash2-client"
+cd capdash2-client; git checkout master; cd ..
+
+echo "Creating an alias 'git spush' to recursively push submodules"
+git config --global alias.spush 'push --recurse-submodules=on-demand'

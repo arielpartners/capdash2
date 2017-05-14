@@ -60,7 +60,7 @@ The new architecture consists of the following main pieces:
 
 * [PostgreSQL Database](https://www.postgresql.org/about/) PostgreSQL database.
 * [Ruby on Rails 5 Backend](http://rubyonrails.org) running in [API Mode](https://devblast.com/b/rails-5-api-mode-overview)
-* [AngularJS 2 Frontend](https://angular.io) AngularJS 2
+* [AngularJS 4 Frontend](https://angular.io) AngularJS 4
 * [Twitter Bootstrap](http://getbootstrap.com) CSS styling framework
 
 Additional technologies will be listed here or in the respective BE/FE readme files as they are incorporated into the application (e.g. Redis, Redux, etc.)
@@ -68,6 +68,15 @@ Additional technologies will be listed here or in the respective BE/FE readme fi
 Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStack-draft4.pptx) for more details regarding the proposed future-state architecture.
 
 ## Building the Application
+
+NOTE: the client and server applications are now git submodules.  
+This allows front-end and back-end developers to focus on their piece in isolation.
+However, it means that if we want to fetch the entire tree and work with it as a single unit, we will have to perform some extra configuration steps.
+Perform a number of git commands to properly fetch and register the client and server submodules.
+Please read the contents of the shell script for more details.
+See [this blog](https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407) to learn more about git submodules.
+
+ * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
 
 Please see the [front-end README](./capdash2-client/README.md) and [back-end README](./capdash2-server/README.md) respectively.
 
