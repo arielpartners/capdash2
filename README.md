@@ -67,26 +67,37 @@ Additional technologies will be listed here or in the respective BE/FE readme fi
 
 Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStack-draft4.pptx) for more details regarding the proposed future-state architecture.
 
-## Building the Application
+## Fetching and Building the Application
 
 NOTE: the client and server applications are now git submodules.  
 This allows front-end and back-end developers to focus on their piece in isolation.
 However, it means that if we want to fetch the entire tree and work with it as a single unit, we will have to perform some extra configuration steps.
-Perform a number of git commands to properly fetch and register the client and server submodules.
-Please read the contents of the shell script for more details.
 See [this blog](https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407) to learn more about git submodules.
 
+### Configuring a combined repo
+
+1. Clone the repo
+ * `git clone --recursive git@github.com:arielpartners/capdash2.git`
+ 
+2. Initialize, configure, and fetch the submodules
  * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
+
+### Configuring front-end or back-end repo separately
 
 Please see the [front-end README](./capdash2-client/README.md) and [back-end README](./capdash2-server/README.md) respectively.
 
 ## Running the Application
 
+1. `cd capdash2-server; rails s`
+2. `cd capdash2-client; npm start`
+3. Use the following URL and login:
+
 Environment | URL | test login | test password
 --- | ---- | --- | --- |
-Localhost | http://localhost:4200 | n/a | n/a |
-Beta | http://localhost:8080 | testuser | testpassword |
-Prod | http://localhost:8080 | testuser | testpassword |
+Localhost | http://localhost:4200 | sample_user@dhs.nyc.gov | password |
+Integration | http://tbd | ? | ? |
+UAT | http://tbd | ? | ? |
+Prod | http://tbd | ? | ? |
 
 ## Metadata for the Application
 
@@ -129,7 +140,7 @@ These instructions work on a Mac.  See [Windows Prerequisites](#windows-prerequi
 
 5. **Clone this repo**
   * `git clone --recursive git@github.com:arielpartners/capdash2.git`
-  * to keep submodules updated: `git submodule update`
+  * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
 
 ### Frontend
 
