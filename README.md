@@ -153,28 +153,22 @@ maintaining multiple applications or multiple versions of the same application.
   * You should not see any errors
   * Check the version `nvm --version` it should be 0.33.0
 
-4. **Install Node.JS**
+2. **Install Node.JS**
   * See latest version [here](https://nodejs.org/en/)
-  * Install version 7.5.0 `nvm install 7.5.0`
-  * Set 7.5.0 to be the default version `nvm alias default 7.5.0`
+  * Install version 7.10.0 `nvm install 7.10.0`
+  * Set 7.10.0 to be the default version `nvm alias default 7.10.0`
   * Make sure everything is set correctly: `nvm ls`
 
-5. **Install global npm packages (angular-cli, npm-check-updates, typescript)**
-  * Make sure you have the latest 4.2.0 version of npm `sudo npm install -g npm`
-  * Check the version `sudo npm ls -g npm` it should be 4.2.0
-  * Install typescript globally `sudo npm install -g typescript`
-  * Check the version `sudo npm ls -g typescript` it should be 2.1.6
-  * Install angular Command Line Interface globally `sudo npm install -g @angular/cli`
-  * check the version `sudo npm ls -g @angular/cli` it should be 1.0.0-rc.2
+3. **Install global npm package npm-check-updates**
+  * `npm install -g npm-check-updates`
 
-
-6. **Install JetBrains WebStorm**
+4. **Install JetBrains WebStorm**
   * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
-  * You should have version 2016.3.3
+  * You should have version 2017.1.2
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that WebStorm still works if you move to 2FA
 
-7. **Load the capdash2-client project, build and run**
+5. **Load the capdash2-client project, build and run**
   * In Webstorm load (change directory to) capdash2-client
   * `npm install`
   * `npm start`
@@ -299,7 +293,7 @@ maintaining multiple applications or multiple versions of the same application.
 
   4. **Install JetBrains WebStorm**
     * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
-    * You should have version 2016.3.3
+    * You should have version 2017.1.2
     * Go to Preferences/Version Control/GitHub and generate token, then test it
     * This will make sure that WebStorm still works if you move to 2FA
 
@@ -347,7 +341,7 @@ maintaining multiple applications or multiple versions of the same application.
 
   3. **Install JetBrains RubyMine**
     * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
-    * You should have version 2016.3.2
+    * You should have version 2017.1.2
     * Go to Preferences/Version Control/GitHub and generate token, then test it
     * This will make sure that RubyMine still works if you move to 2FA
 
