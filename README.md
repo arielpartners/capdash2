@@ -52,7 +52,7 @@ See [this blog](https://medium.com/@porteneuve/mastering-git-submodules-34c65e94
 
 1. Clone the repo
  * `git clone --recursive git@github.com:arielpartners/capdash2.git`
- 
+
 2. Initialize, configure, and fetch the submodules
  * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
 
@@ -166,7 +166,7 @@ maintaining multiple applications or multiple versions of the same application.
   * In Webstorm load (change directory to) capdash2-client
   * `npm install`
   * `npm start`
-  * alternatively, for dev, you can `npm run json-server` along with `npm run hmr`
+  * Above requires setting up database and starting Rails server from capdash2-server.  Alternatively, for dev, you can `npm run json-server` along with `npm start` in two terminal tabs.
 
 ----
 ### Database
