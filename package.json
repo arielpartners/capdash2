@@ -1,0 +1,24 @@
+{
+  "name": "capdash2",
+  "version": "1.0.0",
+  "description": "This application serves as an example for the proposed new Reference Architecture that will be used going forward for NYC Dept of Homeless Services.  It is based on Shelter Capacity Dashboard (CapDash).  CapDash was selected an an example for the since it is a relatively straightforward application.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arielpartners/capdash2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arielpartners/capdash2/issues"
+  },
+  "homepage": "https://github.com/arielpartners/capdash2#readme"
+}
