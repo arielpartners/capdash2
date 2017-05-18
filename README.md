@@ -89,45 +89,49 @@ Prod | http://tbd | ? | ? |
 ----
 ## Prerequisites
 
-The following steps are required in order to build and run the application as a developer.
-
-### For Windows
-#### 1. Install CMDer
- * CMDer is a Powershell replacement, download the full version with Git included
- * Download [CMDer](http://cmder.net)
-
-#### 2. **Install Chocolatey**
- * Chocolatey is a Homebrew-style package manager for windows
- * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
- * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
-
-### For Mac or Linux
-#### 1. Install Xcode
- * Open App Store.
- * Search for Xcode.
- * Double-click to install.
-
-#### 2. Install XCode Command Line Tools
- * Open Terminal window.
- * Type `xcode-select --install`
- * Follow the prompts to install the command line developer tools
- * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
- * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
-
-#### 3. Install Homebrew
- * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
- * Ensure Homebrew is installed and working properly `brew doctor`
-
-#### 4. Install git
- * `brew update`
- * `brew install git`
- * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
+The following steps are required in order to build and run the application as a developer. 
 
 ### Common
-* **Clone the repo**
+Follow instruction based on your operating system to install common required tool. If following tools are already installed on your machine. You may skip common installation part, and start from cloning the repo.
+
+**Installation for Windows**
+
+ 1. **Install CMDer**
+  * CMDer is a Powershell replacement, download the full version with Git included
+  *  Download [CMDer](http://cmder.net)
+
+ 2. **Install Chocolatey**
+  * Chocolatey is a Homebrew-style package manager for windows
+  * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
+  * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
+
+**Installation for Mac or Linux**
+
+ 1. **Install Xcode**
+  * Open App Store.
+  * Search for Xcode.
+  * Double-click to install.
+
+ 2. **Install XCode Command Line Tools**
+  * Open Terminal window.
+  * Type `xcode-select --install`
+  * Follow the prompts to install the command line developer tools
+  * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
+  * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
+
+ 3. **Install Homebrew**
+  * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  * Ensure Homebrew is installed and working properly `brew doctor`
+
+ 4. **Install git**
+  * `brew update`
+  * `brew install git`
+  * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
+
+**Clone the repo**
+
   * `git clone --recursive git@github.com:arielpartners/capdash2.git`
   * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
-
 
 ----
 ### Frontend
@@ -136,15 +140,15 @@ Nvm allows you to install multiple versions of Node.JS and switch between them e
 maintaining multiple applications or multiple versions of the same application.
 
 **Installation for Windows**
- * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
- * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
+  * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
+  * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
 
 **Installation for Mac / Linux**
- * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
- * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
- * Verify that nvm is installed correctly `nvm ls`
- * You should not see any errors
- * Check the version `nvm --version` it should be 0.33.0
+  * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
+  * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
+  * Verify that nvm is installed correctly `nvm ls`
+  * You should not see any errors
+  * Check the version `nvm --version` it should be 0.33.0
 
 #### 2. Install Node.JS
   * See latest version [here](https://nodejs.org/en/)
