@@ -91,44 +91,43 @@ Prod | http://tbd | ? | ? |
 
 The following steps are required in order to build and run the application as a developer.
 
+### For Windows
+#### 1. Install CMDer
+ * CMDer is a Powershell replacement, download the full version with Git included
+ * Download [CMDer](http://cmder.net)
+
+#### 2. **Install Chocolatey**
+ * Chocolatey is a Homebrew-style package manager for windows
+ * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
+ * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
+
+### For Mac or Linux
+#### 1. Install Xcode
+ * Open App Store.
+ * Search for Xcode.
+ * Double-click to install.
+
+#### 2. Install XCode Command Line Tools
+ * Open Terminal window.
+ * Type `xcode-select --install`
+ * Follow the prompts to install the command line developer tools
+ * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
+ * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
+
+#### 3. Install Homebrew
+ * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+ * Ensure Homebrew is installed and working properly `brew doctor`
+
+#### 4. Install git
+ * `brew update`
+ * `brew install git`
+ * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
+
 ### Common
-
-
-* **Installation for Mac or Linux**
-    1. **Install Xcode**
-       * Open App Store.
-       * Search for Xcode.
-       * Double-click to install.
-
-    2. **Install XCode Command Line Tools**
-       * Open Terminal window.
-       * Type `xcode-select --install`
-       * Follow the prompts to install the command line developer tools
-       * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
-       * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
-
-    3. **Install Homebrew**
-       * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-       * Ensure Homebrew is installed and working properly `brew doctor`
-
-    4. **Install git**
-       * `brew update`
-       * `brew install git`
-       * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
-
-* **Installation for Windows**
-    1. **Install CMDer**
-       * CMDer is a Powershell replacement, download the full version with Git included
-       * Download [CMDer](http://cmder.net)
-
-    2. **Install Chocolatey**
-       * Chocolatey is a Homebrew-style package manager for windows
-       * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
-       * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
-
 * **Clone the repo**
   * `git clone --recursive git@github.com:arielpartners/capdash2.git`
   * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
+
 
 ----
 ### Frontend
@@ -136,16 +135,16 @@ The following steps are required in order to build and run the application as a 
 Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are
 maintaining multiple applications or multiple versions of the same application.
 
+**Installation for Windows**
+ * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
+ * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
+
 **Installation for Mac / Linux**
  * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
  * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
  * Verify that nvm is installed correctly `nvm ls`
  * You should not see any errors
  * Check the version `nvm --version` it should be 0.33.0
-
-**Installation for Windows**
- * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
- * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
 
 #### 2. Install Node.JS
   * See latest version [here](https://nodejs.org/en/)
@@ -171,13 +170,12 @@ maintaining multiple applications or multiple versions of the same application.
 ----
 ### Database
 ####  1. Install Docker
-* **Installation for Mac / Linux**
-   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-
-
 * **Installation for Windows**  
    * Confirm that the PC has virtualization enabled: Launch the Task Manager, select the Performance tab, and confirm that "Virtualization : **Enabled**".  If not, enable virtualization in the BIOS: On an HP EliteDesk 800 G1, for instance, hold down F10 during the boot process, and the PC will enter the HP Setup Utility.  Pick Security -> System Securty.  Then enable Virtualization Technology (VTx) and Virtualization Technology Directed I/O (VTd).  Accept/Save changes by pressing F10.  The computer will reboot.  Then confirm that virtualization is enabled via the Task Manager.
    * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
+
+* **Installation for Mac / Linux**
+   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 ####  2. Create Postgres Docker Image
  * Execute `docker pull postgres`
@@ -228,6 +226,11 @@ maintaining multiple applications or multiple versions of the same application.
 
 ####  2. Install Ruby
 
+  * **Installation for Windows**
+    * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
+    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/). Make sure you install both Ruby and the devkit.
+    * Ruby 2.3 appears to be the most recent available on Windows
+
   * **Installation for Mac / Linux**
     * See latest version [here](https://www.ruby-lang.org/en/downloads/releases/)
     * Install version 2.4.0 `rvm install 2.4.0`
@@ -235,12 +238,6 @@ maintaining multiple applications or multiple versions of the same application.
     * Set 2.4.0 to be the default version `rvm use 2.4.0`
     * Make sure everything is set correctly: `rvm ls`
     * Check which Ruby you are using `ruby -v` You should see 2.4.0
-
-
-  * **Installation for Windows**
-    * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
-    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/). Make sure you install both Ruby and the devkit.
-    * Ruby 2.3 appears to be the most recent available on Windows
 
 ####  3. Install Rails
   * Install version 5.0.2 `gem install rails --version=5.0.2 --no-ri --no-rdoc`
@@ -253,6 +250,11 @@ maintaining multiple applications or multiple versions of the same application.
   * This will make sure that RubyMine still works if you move to 2FA
 
 ####  5. Install Postgres
+  * **Installation for Windows**
+    * Not sure if necessary, but you can install Postgres:
+    * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
+    * From [the site](https://www.postgresql.org/download/windows/)
+
   * **Installation for Mac / Linux**
     * So far, the only way I have gotten this to work is to install Postgres locally
     * We won't actually use this instance, since we are using the Postgres Docker image, but we need the header files in order to compile the pg gem
@@ -261,12 +263,6 @@ maintaining multiple applications or multiple versions of the same application.
     * `brew update`
     * `brew doctor`
     * `brew install postgresql`
-
-
-  * **Installation for Windows**
-    * Not sure if necessary, but you can install Postgres:
-    * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
-    * From [the site](https://www.postgresql.org/download/windows/)
 
 ####  6. Install Postgres Ruby Gem
   * `gem install pg`
