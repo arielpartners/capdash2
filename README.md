@@ -41,6 +41,7 @@ Additional technologies will be listed here or in the respective BE/FE readme fi
 Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStack-draft4.pptx) for more details regarding the proposed future-state architecture.
 
 ----
+
 ## Fetching and Building the Application
 
 NOTE: the client and server applications are now git submodules.  
@@ -61,11 +62,14 @@ See [this blog](https://medium.com/@porteneuve/mastering-git-submodules-34c65e94
 Please see the [front-end README](./capdash2-client/README.md) and [back-end README](./capdash2-server/README.md) respectively.
 
 ----
-## Running the Application
 
-1. `cd capdash2-server; rails s`
-2. `cd capdash2-client; npm start`
-3. Use the following URL and login:
+## Running the Application
+Assuming all the pre-requisites are fulfilled, you may start the application as follows:
+
+1. `docker start postgres`
+2. `cd capdash2-server; rails s`
+3. `cd capdash2-client; npm start`
+4. Use the following URL and login:
 
 Environment | URL | test login | test password
 --- | ---- | --- | --- |
@@ -87,12 +91,13 @@ Prod | http://tbd | ? | ? |
   * See version in [`cdserver/config/initializers/application.rb`](./cdserver/config/initializers/application.rb)
 
 ----
-## Prerequisites
 
-The following steps are required in order to build and run the application as a developer. 
+## Prerequisites
+The following set of tools and configurations are required in order to build and run the application as a developer. 
 
 ### Common
-Follow instruction based on your operating system to install common required tool. If following tools are already installed on your machine. You may skip common installation part, and start from cloning the repo.
+The following tools apply both to back-end and front-end development.  Follow the instructions based on your operating system. 
+If following tools are already installed on your machine. You may skip the installation part, and start from cloning the repo.
 
 **Installation for Windows**
 
@@ -133,7 +138,8 @@ Follow instruction based on your operating system to install common required too
   * `git clone --recursive git@github.com:arielpartners/capdash2.git`
   * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
 
-----
+-----
+
 ### Frontend
 #### 1. Install Node Version Manager (nvm)
 Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are
@@ -157,11 +163,14 @@ maintaining multiple applications or multiple versions of the same application.
   * Make sure everything is set correctly: `nvm ls`
 
 ####  3. Install global npm package npm-check-updates
+npm-check-updates provides a utility program "ncu" that automatically detects whether all packages in `packages.json` are up to date, and if not, what are the latest versions.
+You can optionally tell `ncu` to update the settings in `package.json` to update everything to the latest versions in one go.  `npm install` is still needed to actually install the new packages.   Before the first production release, we try to keep all packages up-to-date.
+After releasing to production, updates must be carefully planned to avoid application instability.
   * `npm install -g npm-check-updates`
 
 ####  4. Install JetBrains WebStorm
   * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
-  * You should have version 2017.1.2
+  * You should have the latest version (`2017.1.2` as of 5/20/2017)
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that WebStorm still works if you move to 2FA
 
@@ -249,7 +258,7 @@ maintaining multiple applications or multiple versions of the same application.
 
 ####  4. Install JetBrains RubyMine
   * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
-  * You should have version 2017.1.2
+  * You should have the latest version (`2017.1.3` as of 5/20/2017)
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that RubyMine still works if you move to 2FA
 
