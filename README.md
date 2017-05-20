@@ -41,6 +41,7 @@ Additional technologies will be listed here or in the respective BE/FE readme fi
 Please see the [Enterprise Architecture Stack](./docs/EnterpriseArchitectureStack-draft4.pptx) for more details regarding the proposed future-state architecture.
 
 ----
+
 ## Fetching and Building the Application
 
 NOTE: the client and server applications are now git submodules.  
@@ -61,11 +62,14 @@ See [this blog](https://medium.com/@porteneuve/mastering-git-submodules-34c65e94
 Please see the [front-end README](./capdash2-client/README.md) and [back-end README](./capdash2-server/README.md) respectively.
 
 ----
-## Running the Application
 
-1. `cd capdash2-server; rails s`
-2. `cd capdash2-client; npm start`
-3. Use the following URL and login:
+## Running the Application
+Assuming all the pre-requisites are fulfilled, you may start the application as follows:
+
+1. `docker start postgres`
+2. `cd capdash2-server; rails s`
+3. `cd capdash2-client; npm start`
+4. Use the following URL and login:
 
 Environment | URL | test login | test password
 --- | ---- | --- | --- |
@@ -87,65 +91,70 @@ Prod | http://tbd | ? | ? |
   * See version in [`cdserver/config/initializers/application.rb`](./cdserver/config/initializers/application.rb)
 
 ----
-## Prerequisites
 
-The following steps are required in order to build and run the application as a developer.
+## Prerequisites
+The following set of tools and configurations are required in order to build and run the application as a developer. 
 
 ### Common
+The following tools apply both to back-end and front-end development.  Follow the instructions based on your operating system. 
+If following tools are already installed on your machine. You may skip the installation part, and start from cloning the repo.
 
+**Installation for Windows**
 
-* **Installation for Mac or Linux**
-    1. **Install Xcode**
-       * Open App Store.
-       * Search for Xcode.
-       * Double-click to install.
+ 1. **Install CMDer**
+  * CMDer is a Powershell replacement, download the full version with Git included
+  *  Download [CMDer](http://cmder.net)
 
-    2. **Install XCode Command Line Tools**
-       * Open Terminal window.
-       * Type `xcode-select --install`
-       * Follow the prompts to install the command line developer tools
-       * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
-       * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
+ 2. **Install Chocolatey**
+  * Chocolatey is a Homebrew-style package manager for windows
+  * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
+  * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
 
-    3. **Install Homebrew**
-       * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-       * Ensure Homebrew is installed and working properly `brew doctor`
+**Installation for Mac or Linux**
 
-    4. **Install git**
-       * `brew update`
-       * `brew install git`
-       * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
+ 1. **Install Xcode**
+  * Open App Store.
+  * Search for Xcode.
+  * Double-click to install.
 
-* **Installation for Windows**
-    1. **Install CMDer**
-       * CMDer is a Powershell replacement, download the full version with Git included
-       * Download [CMDer](http://cmder.net)
+ 2. **Install XCode Command Line Tools**
+  * Open Terminal window.
+  * Type `xcode-select --install`
+  * Follow the prompts to install the command line developer tools
+  * It may be necessary to perform the following, depending on the order of installation: `sudo xcode-select -switch /Library/Developer/CommandLineTools`
+  * See [Stack Overflow](http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786) for more details
 
-    2. **Install Chocolatey**
-       * Chocolatey is a Homebrew-style package manager for windows
-       * From Powershell or CMDer, run `iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
-       * If that does not work, download the Chocolatey installation package manually, unzip it, and install it using the NuGet Package Manager (pre-installed on any newer versions of Visual Studio) using the instructions at https://chocolatey.org/install#install-downloaded-nuget-package-from-powershell.  Navigate to "More Install Options", click on "More Otions", then on "Install downloaded NuGet package from PowerShell".
+ 3. **Install Homebrew**
+  * Install homebrew `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  * Ensure Homebrew is installed and working properly `brew doctor`
 
-* **Clone the repo**
+ 4. **Install git**
+  * `brew update`
+  * `brew install git`
+  * Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add an ssh key to your github account.
+
+**Clone the repo**
+
   * `git clone --recursive git@github.com:arielpartners/capdash2.git`
   * `chmod a+x ./utils/git-init-submodules; ./utils/git-init-submodules`
 
-----
+-----
+
 ### Frontend
 #### 1. Install Node Version Manager (nvm)
 Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are
 maintaining multiple applications or multiple versions of the same application.
 
-**Installation for Mac / Linux**
- * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
- * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
- * Verify that nvm is installed correctly `nvm ls`
- * You should not see any errors
- * Check the version `nvm --version` it should be 0.33.0
-
 **Installation for Windows**
- * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
- * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
+  * Nvm allows you to install multiple versions of Node.JS and switch between them easily.  This is very important if you are maintaining multiple applications or multiple versions of the same application.
+  * Using Chocolatey: `choco install nvm` (also available [here](https://github.com/coreybutler/nvm-windows))    
+
+**Installation for Mac / Linux**
+  * See installation instructions on the [GitHub nvm page](https://github.com/creationix/nvm)
+  * Execute install script `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
+  * Verify that nvm is installed correctly `nvm ls`
+  * You should not see any errors
+  * Check the version `nvm --version` it should be 0.33.0
 
 #### 2. Install Node.JS
   * See latest version [here](https://nodejs.org/en/)
@@ -154,11 +163,14 @@ maintaining multiple applications or multiple versions of the same application.
   * Make sure everything is set correctly: `nvm ls`
 
 ####  3. Install global npm package npm-check-updates
+npm-check-updates provides a utility program "ncu" that automatically detects whether all packages in `packages.json` are up to date, and if not, what are the latest versions.
+You can optionally tell `ncu` to update the settings in `package.json` to update everything to the latest versions in one go.  `npm install` is still needed to actually install the new packages.   Before the first production release, we try to keep all packages up-to-date.
+After releasing to production, updates must be carefully planned to avoid application instability.
   * `npm install -g npm-check-updates`
 
 ####  4. Install JetBrains WebStorm
   * [Download Webstorm](https://www.jetbrains.com/webstorm/download/)
-  * You should have version 2017.1.2
+  * You should have the latest version (`2017.1.2` as of 5/20/2017)
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that WebStorm still works if you move to 2FA
 
@@ -171,13 +183,12 @@ maintaining multiple applications or multiple versions of the same application.
 ----
 ### Database
 ####  1. Install Docker
-* **Installation for Mac / Linux**
-   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-
-
 * **Installation for Windows**  
    * Confirm that the PC has virtualization enabled: Launch the Task Manager, select the Performance tab, and confirm that "Virtualization : **Enabled**".  If not, enable virtualization in the BIOS: On an HP EliteDesk 800 G1, for instance, hold down F10 during the boot process, and the PC will enter the HP Setup Utility.  Pick Security -> System Securty.  Then enable Virtualization Technology (VTx) and Virtualization Technology Directed I/O (VTd).  Accept/Save changes by pressing F10.  The computer will reboot.  Then confirm that virtualization is enabled via the Task Manager.
    * Install [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
+
+* **Installation for Mac / Linux**
+   * Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 ####  2. Create Postgres Docker Image
  * Execute `docker pull postgres`
@@ -228,6 +239,11 @@ maintaining multiple applications or multiple versions of the same application.
 
 ####  2. Install Ruby
 
+  * **Installation for Windows**
+    * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
+    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/). Make sure you install both Ruby and the devkit.
+    * Ruby 2.3 appears to be the most recent available on Windows
+
   * **Installation for Mac / Linux**
     * See latest version [here](https://www.ruby-lang.org/en/downloads/releases/)
     * Install version 2.4.0 `rvm install 2.4.0`
@@ -236,23 +252,22 @@ maintaining multiple applications or multiple versions of the same application.
     * Make sure everything is set correctly: `rvm ls`
     * Check which Ruby you are using `ruby -v` You should see 2.4.0
 
-
-  * **Installation for Windows**
-    * Install with chocolatey: `choco install ruby` and `choco install ruby2.devkit`
-    * Also available through [RubyInstaller](https://rubyinstaller.org/downloads/). Make sure you install both Ruby and the devkit.
-    * Ruby 2.3 appears to be the most recent available on Windows
-
 ####  3. Install Rails
   * Install version 5.0.2 `gem install rails --version=5.0.2 --no-ri --no-rdoc`
   * Validate the install `gem list --local rails`
 
 ####  4. Install JetBrains RubyMine
   * [Download RubyMine](https://www.jetbrains.com/ruby/download/)
-  * You should have version 2017.1.2
+  * You should have the latest version (`2017.1.3` as of 5/20/2017)
   * Go to Preferences/Version Control/GitHub and generate token, then test it
   * This will make sure that RubyMine still works if you move to 2FA
 
 ####  5. Install Postgres
+  * **Installation for Windows**
+    * Not sure if necessary, but you can install Postgres:
+    * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
+    * From [the site](https://www.postgresql.org/download/windows/)
+
   * **Installation for Mac / Linux**
     * So far, the only way I have gotten this to work is to install Postgres locally
     * We won't actually use this instance, since we are using the Postgres Docker image, but we need the header files in order to compile the pg gem
@@ -261,12 +276,6 @@ maintaining multiple applications or multiple versions of the same application.
     * `brew update`
     * `brew doctor`
     * `brew install postgresql`
-
-
-  * **Installation for Windows**
-    * Not sure if necessary, but you can install Postgres:
-    * Through Chocolatey: `choco install postgresql` and `choco admin pgadmin3`
-    * From [the site](https://www.postgresql.org/download/windows/)
 
 ####  6. Install Postgres Ruby Gem
   * `gem install pg`
