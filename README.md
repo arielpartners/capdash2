@@ -279,6 +279,7 @@ After releasing to production, updates must be carefully planned to avoid applic
 
 ####  6. Install Postgres Ruby Gem
   * `gem install pg`
+  * NOTE: On Mac you may need to type `sudo gem install pg`
 
 ####  7. Uninstall Postgres
   * There has got to be a better way: `brew uninstall postgresql`
